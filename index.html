@@ -31,7 +31,8 @@
                             darkOlive: '#283618',
                             gold: '#DDA15E',
                             goldBright: '#E5A93C',
-                            dark: '#1F2415'
+                            dark: '#1F2415',
+                            teal: '#0f766e'
                         }
                     }
                 }
@@ -92,7 +93,7 @@
                 </div>
                 <div>
                     <h1 class="font-serif text-xl sm:text-2xl font-bold text-med-darkOlive tracking-tight">Málaga för Susann</h1>
-                    <p class="text-[10px] sm:text-xs font-semibold tracking-wider text-med-goldBright uppercase">Födelsedagsresa • 28 Juni – 5 Juli</p>
+                    <p class="text-[10px] sm:text-xs font-semibold tracking-wider text-med-goldBright uppercase">Födelsedagsresa • 28 Juni – 6 Juli</p>
                 </div>
             </div>
             <div class="flex items-center space-x-2 sm:space-x-4">
@@ -107,7 +108,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-amber-50/70 via-orange-50/40 to-med-sand py-12 sm:py-20">
+    <section class="relative overflow-hidden bg-gradient-to-b from-amber-50/70 via-orange-50/40 to-med-sand py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto">
                 <span class="inline-block text-xs font-bold text-med-goldBright uppercase tracking-widest bg-amber-100 px-3.5 py-1.5 rounded-full mb-4 border border-amber-200">
@@ -117,30 +118,34 @@
                     Grattis på 50-årsdagen, Susann!
                 </h2>
                 <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
-                    Välkomna till er personliga födelsedagsguide till Málaga. Den <span class="font-semibold text-med-terracotta">1 juli</span> fyller Susann 50 år under den andalusiska solen – en milstolpe som förtjänar att firas med det allra bästa. Vi har handplockat en drömvecka full av vandring, lyxig vintage-shopping, fantastisk gastronomi och en helt oförglömlig födelsedag!
+                    Välkomna till er personliga födelsedagsguide till Málaga. Den <span class="font-semibold text-med-terracotta">1 juli</span> fyller Susann 50 år under den andalusiska solen – en milstolpe som förtjänar att firas med det allra bästa. Vi har samlat reseinformation, boende, vandringstips, vintage-shopping, fantastisk mat och oförglömliga äventyr för er vecka!
                 </p>
                 
                 <!-- Quick Stats / Highlights of the Birthday Trip -->
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 max-w-3xl mx-auto">
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-2xl mb-1">✨</span>
-                        <span class="block text-xs font-bold text-med-darkOlive">Firande 1 Juli</span>
+                <div class="grid grid-cols-2 sm:grid-cols-6 gap-3 max-w-4xl mx-auto">
+                    <div onclick="filterCategory('reseinfo')" class="cursor-pointer hover:scale-105 transition-transform bg-teal-50 border border-teal-100 p-3 rounded-2xl shadow-sm text-center">
+                        <span class="block text-xl mb-1">✈️</span>
+                        <span class="block text-[11px] font-bold text-teal-800">Boende & Flyg</span>
                     </div>
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-2xl mb-1">🥾</span>
-                        <span class="block text-xs font-bold text-med-darkOlive">Natur & Berg</span>
+                    <div onclick="filterCategory('birthday')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-xl mb-1">✨</span>
+                        <span class="block text-[11px] font-bold text-med-darkOlive">Firande 1 Juli</span>
                     </div>
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-2xl mb-1">🏛️</span>
-                        <span class="block text-xs font-bold text-med-darkOlive">Kultur & Arkitektur</span>
+                    <div onclick="filterCategory('vandring')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-xl mb-1">🥾</span>
+                        <span class="block text-[11px] font-bold text-med-darkOlive">Natur & Berg</span>
                     </div>
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-2xl mb-1">🛍️</span>
-                        <span class="block text-xs font-bold text-med-darkOlive">Second Hand</span>
+                    <div onclick="filterCategory('kultur')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-xl mb-1">🏛️</span>
+                        <span class="block text-[11px] font-bold text-med-darkOlive">Kultur & Design</span>
                     </div>
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-orange-50 text-center col-span-2 sm:col-span-1">
-                        <span class="block text-2xl mb-1">🥂</span>
-                        <span class="block text-xs font-bold text-med-darkOlive">God Mat & Bubbel</span>
+                    <div onclick="filterCategory('shopping')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-xl mb-1">🛍️</span>
+                        <span class="block text-[11px] font-bold text-med-darkOlive">Second Hand</span>
+                    </div>
+                    <div onclick="filterCategory('mat')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-xl mb-1">🥂</span>
+                        <span class="block text-[11px] font-bold text-med-darkOlive">God Mat & Vin</span>
                     </div>
                 </div>
             </div>
@@ -157,6 +162,9 @@
         <div class="flex flex-wrap gap-2 mb-8 justify-center items-center" id="filters">
             <button onclick="filterCategory('all')" id="btn-all" class="cat-btn bg-med-terracotta text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all duration-300">
                 <i class="fa-solid fa-layer-group mr-1.5"></i> Visa allt
+            </button>
+            <button onclick="filterCategory('reseinfo')" id="btn-reseinfo" class="cat-btn bg-white hover:bg-teal-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm border border-teal-100 transition-all duration-300">
+                <i class="fa-solid fa-plane-departure text-med-teal mr-1.5"></i> ✈️ Reseinfo & Boende
             </button>
             <button onclick="filterCategory('birthday')" id="btn-birthday" class="cat-btn bg-white hover:bg-amber-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm border border-amber-200 transition-all duration-300">
                 <i class="fa-solid fa-crown text-med-goldBright mr-1.5"></i> ✨ Firande 1 Juli
@@ -182,8 +190,85 @@
             
             <!-- Left Side: Cards and Info List (7 Cols) -->
             <div class="lg:col-span-7 space-y-8" id="cards-container">
+
+                <!-- NEW CATEGORY: Flight & Accommodation Block -->
+                <div class="category-block" data-category="reseinfo">
+                    <h3 class="font-serif text-2xl font-bold text-med-teal mb-4 border-b pb-2 border-teal-100 flex items-center">
+                        <span class="mr-2">✈️</span> Praktisk Reseinfo & Boende
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Flight Details Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-teal-50 hover:shadow-md transition-all duration-300 card-item" id="card-flight-details">
+                            <div class="relative bg-gradient-to-r from-teal-500 to-teal-700 p-6 text-white">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Direktflyg tur & retur</span>
+                                    <span class="text-xs opacity-90"><i class="fa-solid fa-plane-up"></i> Norwegian Air</span>
+                                </div>
+                                <h4 class="font-serif text-2xl font-bold">Resedetaljer: Göteborg (GOT) ⇄ Málaga (AGP)</h4>
+                                <p class="text-teal-100 text-sm mt-1">Söndag 28 juni – Måndag 6 juli 2026</p>
+                            </div>
+                            <div class="p-6">
+                                <!-- Render Flight Image Verbatim -->
+                                <div class="mb-4 rounded-xl overflow-hidden border border-gray-100 shadow-inner">
+                                    <img src="image_8f8862.jpg" alt="Dina flyg - Detaljer" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80';">
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+                                    <div class="bg-teal-50/50 p-4 rounded-2xl border border-teal-100/50">
+                                        <p class="font-bold text-teal-800 flex items-center gap-1.5 mb-1">
+                                            <i class="fa-solid fa-plane-departure"></i> Utresa: Sön 28 juni 2026
+                                        </p>
+                                        <p class="font-semibold text-gray-900">10:45 (GOT) ➔ 14:30 (AGP)</p>
+                                        <p class="text-xs text-gray-500 mt-1">Direktflyg • Restid: 3h 45min • Norwegian Air</p>
+                                    </div>
+                                    <div class="bg-teal-50/50 p-4 rounded-2xl border border-teal-100/50">
+                                        <p class="font-bold text-teal-800 flex items-center gap-1.5 mb-1">
+                                            <i class="fa-solid fa-plane-arrival"></i> Hemresa: Mån 06 juli 2026
+                                        </p>
+                                        <p class="font-semibold text-gray-900">07:10 (AGP) ➔ 10:55 (GOT)</p>
+                                        <p class="text-xs text-gray-500 mt-1">Direktflyg • Restid: 3h 45min • Norwegian Air Sweden</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accommodation Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-teal-50 hover:shadow-md transition-all duration-300 card-item" id="card-accommodation-details">
+                            <div class="relative h-60 sm:h-72">
+                                <!-- Render Accommodation Image Verbatim -->
+                                <img src="image_8f888a.png" alt="Homely Málaga Mariblanca 17, Vegafuente Apartments" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-teal text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Vårt Boende</span>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-serif text-2xl font-bold text-med-darkOlive">Homely Málaga Mariblanca 17</h4>
+                                    <div class="flex items-center text-amber-400 gap-0.5">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-teal-700 font-bold mb-3 flex items-center gap-1">
+                                    <i class="fa-solid fa-location-dot"></i> Calle Mariblanca 17, Malaga Centro, 29012 Málaga, Spanien
+                                </p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Ert eleganta hem i hjärtat av Málaga! Denna topprankade och fantastiskt inredda lägenhet bjuder på vackra träbjälkar, tegelväggar och ett perfekt läge i de historiska kvarteren (Centro). Härifrån har ni gångavstånd till precis allt: katedralen, shoppingen på Calle Larios, de gamla gränderna fyllda av tapasbarer samt hamnen och stranden.
+                                </p>
+                                <div class="flex flex-wrap items-center justify-between gap-3 border-t pt-4 border-teal-50">
+                                    <button onclick="focusOnLocation(36.7241, -4.4214, 'Homely Málaga Mariblanca 17', 17)" class="text-xs font-bold text-med-teal hover:underline flex items-center gap-1.5">
+                                        <i class="fa-solid fa-house-chimney-window"></i> Hitta boendet på kartan
+                                    </button>
+                                    <a href="https://www.booking.com/hotel/es/homely-malaga-mariblanca-17-vegafuente-apartments.sv.html" target="_blank" class="bg-med-teal hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1">
+                                        Visa på Booking.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <!-- NEW: Susann's 50th Birthday Special Category Block -->
+                <!-- Susann's 50th Birthday Special Category Block -->
                 <div class="category-block" data-category="birthday">
                     <h3 class="font-serif text-2xl font-bold text-med-goldBright mb-4 border-b pb-2 border-amber-200 flex items-center">
                         <span class="mr-2">✨</span> Onsdagen den 1 Juli: Förslag till födelsedagen
@@ -247,7 +332,7 @@
                             <div class="p-6">
                                 <h4 class="font-serif text-xl font-bold text-med-darkOlive mb-2">Stämningsfull tapaskväll i Gamla Stan</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Skippa dyra och uppstyrda middagar och satsa i stället på en levande, spansk och helt prestigelös tapasrunda! Ni kan strosa runt i gamla stan och välja restauranger helt efter humör på kvällen. Ett underbart tips för en festlig men plånboksvänlig stämning är den historiska vinkällaren <span class="font-semibold text-med-darkOlive">Bodega El Pimpi</span>. Här äter ni fantastiska, klassiska smårätter omgivna av gigantiska vintunnor i en labyrint av charmiga spanska rum. Helt rätt stämning för en 50-årsdag!
+                                    Skippa dyra och uppstyrda middagar och satsa i stället på en levande, spansk och helt prestigelös tapasrunda! Ni kan strosa runt i gamla stan och välja restauranger helt efter humör på kvällen. Ett underunderbart tips för en festlig men plånboksvänlig stämning är den historiska vinkällaren <span class="font-semibold text-med-darkOlive">Bodega El Pimpi</span>. Här äter ni fantastiska, klassiska smårätter omgivna av gigantiska vintunnor i en labyrint av charmiga spanska rum. Helt rätt stämning för en 50-årsdag!
                                 </p>
                                 <div class="flex items-center justify-between border-t pt-4 border-amber-50">
                                     <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-goldBright mr-1"></i> Calle Granada, 62</span>
@@ -500,15 +585,17 @@
 
                 <!-- Events & Calendar section -->
                 <div class="category-block" data-category="event">
-                    
+                    <h3 class="font-serif text-2xl font-bold text-purple-700 mb-4 border-b pb-2 border-purple-100 flex items-center">
+                        <span class="mr-2">📅</span> Semesterkalender & Event (28 jun – 6 jul)
+                    </h3>
                     <div class="space-y-6">
                         <!-- Söndag 28 Juni -->
                         <div class="bg-gradient-to-r from-purple-50 to-white rounded-3xl p-6 border border-purple-100 shadow-sm relative overflow-hidden card-item" id="card-event-ocon">
                             <div class="absolute -right-8 -bottom-8 text-purple-100/40 text-8xl font-bold select-none font-serif">28</div>
                             <span class="bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Söndag 28 Juni</span>
-                            <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Symfonisk utomhuskonsert</h4>
+                            <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Ankomst & Symfonisk utomhuskonsert</h4>
                             <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                Starta er semestervecka under bar himmel! Málagas fantastiska kommunala symfoniorkester bjuder in till en helt gratis utomhuskonsert i parken. Det hålls på den anrika utomhusscenen Auditorio Eduardo Ocón i lummiga "Paseo del Parque". Mycket mysig spansk folkstämning i den svala kvällsluften.
+                                Välkomna till Málaga! Efter att ha landat kl. 14:30 och installerat er i er fina lägenhet på Mariblanca 17, kan ni starta semesterveckan under bar himmel! Málagas symfoniorkester bjuder in till en helt gratis utomhuskonsert i parken lummiga "Paseo del Parque" (Auditorio Eduardo Ocón). Otroligt mysig spansk folkstämning i den svala kvällsluften.
                             </p>
                             <div class="flex items-center justify-between border-t pt-4 border-purple-100">
                                 <span class="text-xs text-purple-700 font-semibold"><i class="fa-solid fa-clock mr-1"></i> Kvällstid</span>
@@ -595,10 +682,10 @@
                     <!-- Map Box -->
                     <div id="map" class="w-full h-[320px] sm:h-[450px] lg:h-[550px] rounded-2xl border border-orange-50 z-10"></div>
                     
-                    <div class="mt-4 p-3 bg-amber-50/50 border border-amber-100 rounded-xl">
-                        <p class="text-[11px] text-gray-500 leading-relaxed text-center">
-                            <i class="fa-solid fa-cake-candles text-med-goldBright mr-1 animate-bounce"></i> 
-                            Klicka på de <b>guldiga nålarna</b> på kartan för att se platserna för Susanns 50-årsdag den 1 juli!
+                    <div class="mt-4 p-3 bg-teal-50 border border-teal-100 rounded-xl">
+                        <p class="text-[11px] text-teal-800 leading-relaxed text-center font-medium">
+                            <i class="fa-solid fa-house-chimney-window text-med-teal mr-1 animate-pulse"></i> 
+                            Ert boende på <b>Calle Mariblanca 17</b> är markerat med en <span class="text-med-teal font-bold">grönblå hus-nål</span> mitt i centrum!
                         </p>
                     </div>
                 </div>
@@ -616,15 +703,22 @@
                     <div class="flex items-start space-x-3.5">
                         <input type="checkbox" checked class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
                         <div>
-                            <p class="font-bold text-sm sm:text-base text-med-goldBright">Spana in mysiga tapasrestauranger till den 1 juli</p>
-                            <p class="text-xs text-gray-300">Skapa en lista på potentiella ställen (t.ex. Bodega El Pimpi eller Casa Lola) så ni kan välja fritt under kvällens gång.</p>
+                            <p class="font-bold text-sm sm:text-base text-med-goldBright">Ladda ner flygbiljetterna i Norwegian-appen</p>
+                            <p class="text-xs text-gray-300">Utresa söndag 28 juni kl. 10:45 och tidig hemresa måndag 6 juli kl. 07:10.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-3.5">
                         <input type="checkbox" checked class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
                         <div>
-                            <p class="font-bold text-sm sm:text-base text-med-goldBright">Boka bad & massage på Hammam Al Ándalus</p>
-                            <p class="text-xs text-gray-300">Perfekt start för Susann på födelsedagens förmiddag. Säkra förmiddagstiden i förväg!</p>
+                            <p class="font-bold text-sm sm:text-base text-med-goldBright">Läs igenom incheckningsinstruktioner för Mariblanca 17</p>
+                            <p class="text-xs text-gray-300">Lägenheten ligger supercentralt nära Teatro Cervantes. Perfekt utgångspunkt för alla utflykter!</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3.5">
+                        <input type="checkbox" class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
+                        <div>
+                            <p class="font-bold text-sm sm:text-base">Boka bad & massage på Hammam Al Ándalus till den 1 juli</p>
+                            <p class="text-xs text-gray-300">Ett underbart och stämningsfullt sätt att starta Susanns 50-årsdag på.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-3.5">
@@ -632,13 +726,6 @@
                         <div>
                             <p class="font-bold text-sm sm:text-base">Boka biljetter till Caminito del Rey</p>
                             <p class="text-xs text-gray-300">Viktigast av allt för er vandringsdag. Blir slutsålt extremt snabbt!</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3.5">
-                        <input type="checkbox" class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
-                        <div>
-                            <p class="font-bold text-sm sm:text-base">Packa finkläderna för 50-årsfirandet</p>
-                            <p class="text-xs text-gray-300">För en elegant takterrass-skål och stjärnmiddag vid havet.</p>
                         </div>
                     </div>
                 </div>
@@ -663,8 +750,18 @@
         let map;
         let markers = [];
         
-        // Define Locations Data including Susann's Birthday spots
+        // Define Locations Data including Accommodation and Susann's Birthday spots
         const locations = [
+            // Home / Accommodation
+            {
+                name: "Homely Málaga Mariblanca 17 (Vårt Boende)",
+                lat: 36.7241,
+                lng: -4.4214,
+                category: "reseinfo",
+                icon: "fa-house-chimney-window",
+                color: "#0f766e",
+                desc: "Ert fantastiska boende i gamla stan. Nära till precis allt!"
+            },
             // Birthday specific spots
             {
                 name: "Hammam Al Ándalus",
@@ -800,7 +897,7 @@
             // Center roughly on Málaga city
             map = L.map('map', {
                 scrollWheelZoom: false
-            }).setView([36.7212, -4.4150], 13);
+            }).setView([36.7225, -4.4190], 14);
 
             // Add clean beautiful map tile layer
             L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -872,7 +969,7 @@
 
         // Reset map view to fit all landmarks
         function resetMapView() {
-            map.setView([36.7212, -4.4150], 13);
+            map.setView([36.7225, -4.4190], 14);
             map.closePopup();
         }
 
@@ -881,7 +978,7 @@
             // Toggle active styles on buttons
             const buttons = document.querySelectorAll('.cat-btn');
             buttons.forEach(btn => {
-                btn.classList.remove('bg-med-terracotta', 'text-white', 'shadow-md');
+                btn.classList.remove('bg-med-terracotta', 'text-white', 'shadow-md', 'bg-gradient-to-r', 'from-med-goldBright', 'to-med-terracotta', 'bg-teal-700', 'bg-med-teal');
                 btn.classList.add('bg-white', 'text-gray-600', 'border-gray-100');
             });
 
@@ -890,6 +987,8 @@
                 if (category === 'birthday') {
                     // Give birthday button some golden spark
                     activeBtn.classList.add('bg-gradient-to-r', 'from-med-goldBright', 'to-med-terracotta', 'text-white', 'shadow-md');
+                } else if (category === 'reseinfo') {
+                    activeBtn.classList.add('bg-med-teal', 'text-white', 'shadow-md');
                 } else {
                     activeBtn.classList.add('bg-med-terracotta', 'text-white', 'shadow-md');
                 }
@@ -916,6 +1015,9 @@
             } else if (category === 'birthday') {
                 // Focus deeply on old town where all the proposed birthday events now take place
                 map.setView([36.7210, -4.4200], 15.5);
+            } else if (category === 'reseinfo') {
+                // Focus tightly on apartment location
+                map.setView([36.7241, -4.4214], 16.5);
             } else if (category === 'mat') {
                 // Focus nicely between central and eastern beachfront Pedregalejo
                 map.setView([36.7200, -4.4000], 13);
