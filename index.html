@@ -81,6 +81,10 @@
             animation: subtle-gold-pulse 3s infinite;
             border: 1px solid rgba(229, 169, 60, 0.3) !important;
         }
+        /* Smooth fade-in for modals */
+        .modal-transition {
+            transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+        }
     </style>
 </head>
 <body class="bg-med-sand text-med-dark font-sans min-h-screen selection:bg-med-terracotta/20 selection:text-med-terracotta">
@@ -118,41 +122,9 @@
                 <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-med-darkOlive leading-tight mb-6">
                     Málaga-guiden till Susanns 50-årsresa!
                 </h2>
-                <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
-                    Välkomna <b>Magnus, Susann och Josefin</b> till er skräddarsydda digitala guide för er vecka i Andalusien! Den <span class="font-semibold text-med-terracotta">1 juli</span> firar vi Susanns 50-årsdag under palmers sus. Vi har nu även integrerat era flygtider, ert vackra boende på <b>Mariblanca 17</b>, er inbokade dagstur till <b>Caminito del Rey</b> samt en smidig reseplan för hela vistelsen!
+                <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-4">
+                    Välkomna <b>Magnus, Susann och Josefin</b> till er skräddarsydda digitala guide för er vecka i Andalusien! Den <span class="font-semibold text-med-terracotta">1 juli</span> firar vi Susanns 50-årsdag under palmers sus. Vi har integrerat era flygtider, ert vackra boende på <b>Mariblanca 17</b>, er inbokade dagstur till <b>Caminito del Rey</b> samt en smidig reseplan fylld med handfasta tips från era bekanta!
                 </p>
-                
-                <!-- Quick Stats / Highlights of the Birthday Trip -->
-                <div class="grid grid-cols-2 sm:grid-cols-7 gap-2 max-w-5xl mx-auto">
-                    <div onclick="filterCategory('itinerary')" class="cursor-pointer hover:scale-105 transition-transform bg-amber-50 border border-amber-200 p-2.5 rounded-2xl shadow-sm text-center">
-                        <span class="block text-lg mb-0.5">🗓️</span>
-                        <span class="block text-[10px] font-extrabold text-amber-800">Reseplan & Info</span>
-                    </div>
-                    <div onclick="filterCategory('reseinfo')" class="cursor-pointer hover:scale-105 transition-transform bg-teal-50 border border-teal-100 p-2.5 rounded-2xl shadow-sm text-center">
-                        <span class="block text-lg mb-0.5">✈️</span>
-                        <span class="block text-[10px] font-bold text-teal-800">Boende & Flyg</span>
-                    </div>
-                    <div onclick="filterCategory('birthday')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-lg mb-0.5">👑</span>
-                        <span class="block text-[10px] font-bold text-med-darkOlive">1 Juli: 50 år!</span>
-                    </div>
-                    <div onclick="filterCategory('vandring')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-lg mb-0.5">🥾</span>
-                        <span class="block text-[10px] font-bold text-med-darkOlive">Natur & Berg</span>
-                    </div>
-                    <div onclick="filterCategory('kultur')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-lg mb-0.5">🏛️</span>
-                        <span class="block text-[10px] font-bold text-med-darkOlive">Kultur & Design</span>
-                    </div>
-                    <div onclick="filterCategory('shopping')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-lg mb-0.5">🛍️</span>
-                        <span class="block text-[10px] font-bold text-med-darkOlive">Second Hand</span>
-                    </div>
-                    <div onclick="filterCategory('mat')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-lg mb-0.5">🥂</span>
-                        <span class="block text-[10px] font-bold text-med-darkOlive">God Mat & Vin</span>
-                    </div>
-                </div>
             </div>
         </div>
         <!-- Decorative background shapes -->
@@ -160,7 +132,7 @@
         <div class="absolute top-1/4 right-0 -translate-x-1/4 w-80 h-80 rounded-full bg-amber-100/40 blur-3xl pointer-events-none"></div>
     </section>
 
-    <!-- Main Content Container with Split-Screen layout (Cards & Collage left, Sticky map right on desktop) -->
+    <!-- Main Content Container with Split-Screen layout -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         
         <!-- Category Selector -->
@@ -168,7 +140,7 @@
             <button onclick="filterCategory('all')" id="btn-all" class="cat-btn bg-med-terracotta text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all duration-300">
                 <i class="fa-solid fa-layer-group mr-1.5"></i> Visa allt
             </button>
-            <button onclick="filterCategory('itinerary')" id="btn-itinerary" class="cat-btn bg-white hover:bg-amber-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm border border-amber-200 transition-all duration-300">
+            <button onclick="filterCategory('itinerary')" id="btn-itinerary" class="cat-btn bg-white hover:bg-amber-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm border border-amber-200 transition-all duration-300">
                 <i class="fa-solid fa-calendar-days text-amber-600 mr-1.5"></i> 🗓️ Reseplan & Transport
             </button>
             <button onclick="filterCategory('reseinfo')" id="btn-reseinfo" class="cat-btn bg-white hover:bg-teal-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm border border-teal-100 transition-all duration-300">
@@ -176,6 +148,9 @@
             </button>
             <button onclick="filterCategory('birthday')" id="btn-birthday" class="cat-btn bg-white hover:bg-amber-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm border border-amber-200 transition-all duration-300">
                 <i class="fa-solid fa-crown text-med-goldBright mr-1.5"></i> ✨ Firande 1 Juli
+            </button>
+            <button onclick="filterCategory('byar')" id="btn-byar" class="cat-btn bg-white hover:bg-purple-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm border border-purple-100 transition-all duration-300">
+                <i class="fa-solid fa-car text-med-purple mr-1.5"></i> 🚗 Utflykter & Hyrbil
             </button>
             <button onclick="filterCategory('kultur')" id="btn-kultur" class="cat-btn bg-white hover:bg-orange-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm border border-gray-100 transition-all duration-300">
                 <i class="fa-solid fa-gothic-arch text-med-terracotta mr-1.5"></i> Kultur & Byggnader
@@ -196,7 +171,7 @@
             <!-- Left Side: Cards and Info List (7 Cols) -->
             <div class="lg:col-span-7 space-y-8" id="cards-container">
 
-                <!-- NEW CATEGORY: Detailed Itinerary and Airport Transport Guide -->
+                <!-- CATEGORY: Detailed Itinerary and Airport Transport Guide -->
                 <div class="category-block" data-category="itinerary">
                     <h3 class="font-serif text-2xl font-bold text-amber-800 mb-4 border-b pb-2 border-amber-200 flex items-center">
                         <span class="mr-2">🗓️</span> Detaljerad Reseplan & Transporter
@@ -221,7 +196,7 @@
                                     <h5 class="font-bold text-teal-800 flex items-center gap-1">
                                         <i class="fa-solid fa-plane-arrival"></i> Vid ankomst (Sön 28 juni kl. 14:30)
                                     </h5>
-                                    <p class="mt-1 leading-relaxed">
+                                    <p class="mt-1 leading-relaxed text-xs">
                                         Efter landning och väskhämtning har ni tre utmärkta alternativ till ert boende mitt i gamla stan:
                                     </p>
                                     <ul class="list-disc pl-4 mt-2 space-y-1 text-xs">
@@ -232,10 +207,10 @@
                                 </div>
 
                                 <div class="border-l-4 border-red-500 pl-4 py-1 bg-red-50/30 rounded-r-xl pr-2">
-                                    <h5 class="font-bold text-red-800 flex items-center gap-1.5">
+                                    <h5 class="font-bold text-red-800 flex items-center gap-1.5 text-xs">
                                         <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> Vid hemresa (Mån 6 juli - Flyg kl. 07:10)
                                     </h5>
-                                    <p class="mt-1 font-semibold text-gray-900">Rekommenderad ankomsttid på flygplatsen: Senast kl. 05:10</p>
+                                    <p class="mt-1 font-semibold text-gray-900 text-xs">Rekommenderad ankomsttid på flygplatsen: Senast kl. 05:10</p>
                                     <p class="mt-1 leading-relaxed text-xs text-gray-600">
                                         Eftersom ni flyger tidigt på morgonen är det extremt viktigt att välja rätt transportmedel för att slippa stress:
                                     </p>
@@ -283,7 +258,7 @@
                                     <span class="text-xs bg-amber-500/80 text-white px-2 py-0.5 rounded font-bold"><i class="fa-solid fa-circle-check"></i> Bekräftad</span>
                                 </div>
                                 <h4 class="font-serif text-2xl font-bold">Caminito del Rey – Guidad dagsutflykt</h4>
-                                <p class="text-emerald-100 text-sm mt-1">Bokad via Booking.com & Viator</p>
+                                <p class="text-emerald-100 text-sm mt-1">Bokad via Booking.com & Viator (Voucher ref: Din bokning_ Caminito del Rey Dagstur från Costa del Sol.pdf)</p>
                             </div>
                             
                             <div class="p-6">
@@ -293,8 +268,8 @@
                                         <p class="font-semibold text-gray-900 text-sm">Magnus, Susann (50 år!) & Josefin</p>
                                     </div>
                                     <div>
-                                        <p class="font-bold text-med-darkOlive uppercase tracking-wider mb-1"><i class="fa-solid fa-language text-med-terracotta mr-1"></i> Guidat språk</p>
-                                        <p class="font-semibold text-gray-900 text-sm">Engelska - Guide</p>
+                                        <p class="font-bold text-med-darkOlive uppercase tracking-wider mb-1"><i class="fa-solid fa-clock text-med-terracotta mr-1"></i> Tidsschema</p>
+                                        <p class="font-semibold text-red-700 text-sm">Start på plats: Kl. 08:00 (Fredag 3 juli)</p>
                                     </div>
                                 </div>
 
@@ -307,22 +282,15 @@
                                         <p class="text-xs text-gray-500 mt-1 leading-relaxed">
                                             Busshållplats mellan Unicaja Banco och Caixa Bank vid Avenida de Andalucía 10, i riktning mot flygplatsen. Det tar cirka <b>15–18 minuters promenad (ca 1.3 km)</b> från er lägenhet på Mariblanca 17.
                                         </p>
+                                        <div class="mt-2.5 p-2.5 bg-red-50 text-red-800 text-xs rounded-lg border border-red-100 font-semibold flex items-center gap-2">
+                                            <i class="fa-solid fa-triangle-exclamation animate-pulse"></i>
+                                            <span>Avresa senast kl. 06:30! Resan till ravinen tar ca 1,5 timme så ni måste åka extremt tidigt för att vara där i tid till kl. 08:00.</span>
+                                        </div>
                                         <div class="mt-3 flex gap-2">
                                             <button onclick="focusOnLocation(36.7176, -4.4283, 'Upphämtningsplats: Caminito del Rey', 17)" class="bg-med-terracotta hover:bg-med-terracotta/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-all flex items-center gap-1 shadow-sm">
                                                 <i class="fa-solid fa-location-crosshairs"></i> Visa på kartan
                                             </button>
                                         </div>
-                                    </div>
-
-                                    <div class="bg-red-50/40 p-4 rounded-xl border border-red-100">
-                                        <p class="font-bold text-red-800 flex items-center gap-1.5 text-xs uppercase tracking-wider mb-2">
-                                            <i class="fa-solid fa-circle-exclamation text-amber-500"></i> Viktig information & Regler
-                                        </p>
-                                        <ul class="list-disc pl-4 text-xs space-y-1.5 text-gray-700">
-                                            <li><span class="font-semibold text-gray-900">Viktigt angående tid:</span> Tiden på er voucher är ankomsttiden till själva Caminito del Rey, <span class="font-bold text-red-700">inte upphämtningstiden</span>. Ni måste kontakta den lokala leverantören (Viator) för att bekräfta exakt upphämtningstid i förväg!</li>
-                                            <li><span class="font-semibold text-gray-900">Utrustning:</span> Endast bekväma, stabila skor (t.ex. gympaskor eller vandringsskor). <span class="text-red-700 font-semibold">Inga promenadkäppar eller paraplyer är tillåtna på grund av säkerhetsskäl!</span></li>
-                                            <li><span class="font-semibold text-gray-900">Åldersgräns:</span> Barn måste vara minst 8 år gamla för att få vandra.</li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -373,7 +341,7 @@
                                     </div>
                                     <div class="pb-4">
                                         <p class="text-xs font-bold text-med-goldBright">ONSDAG 1 JULI - SUSANNS 50-ÅRSDAG! 👑</p>
-                                        <p class="text-xs text-gray-600 mt-1">Födelsedagslyx! Moriska bad (Hammam) på förmiddagen, solnedgångsskål med 360-utsikt på AC Malaga Palacio, och en helt underbar och folklig tapaskväll i gamla stan.</p>
+                                        <p class="text-xs text-gray-600 mt-1">Födelsedagslyx! En underbar promenad i den sagolika palatsträdgården <b>Jardín Botánico La Concepción</b>, solnedgångsskål på AC Hotel Málaga Palacio, och en trevlig tapaskväll på stämningsfulla Bodega El Pimpi.</p>
                                     </div>
                                 </div>
 
@@ -384,29 +352,29 @@
                                     </div>
                                     <div class="pb-4">
                                         <p class="text-xs font-bold text-med-olive">TORSDAG 2 JULI - FRILUFT & ESPETOS</p>
-                                        <p class="text-xs text-gray-600 mt-1">Börja ladda upp inför helgens stora vandring. Kanske en dagsutflykt till de tallskogsbeklädda bergen Montes de Málaga eller cykling bort till strandpromenaden i Pedregalejo för att äta grillade sardinspett?</p>
+                                        <p class="text-xs text-gray-600 mt-1">Förbered inför vandringen. Kanske en dagsutflykt till Montes de Málaga eller cykla österut till Pedregalejo för åka strandgrillade sardinspett.</p>
                                     </div>
                                 </div>
 
                                 <div class="flex gap-3">
                                     <div class="flex flex-col items-center">
-                                        <div class="w-8 h-8 rounded-full bg-med-terracotta text-white flex items-center justify-center font-bold text-xs">03</div>
+                                        <div class="w-8 h-8 rounded-full bg-med-olive text-white flex items-center justify-center font-bold text-xs animate-pulse">03</div>
                                         <div class="w-0.5 bg-gray-200 flex-1"></div>
                                     </div>
                                     <div class="pb-4">
-                                        <p class="text-xs font-bold text-med-terracotta">FREDAG 3 JULI - MÁLAGAS TAK</p>
-                                        <p class="text-xs text-gray-600 mt-1">Besök katedralen och boka in den spännande takvandringen på katedralens kupol. Sista-minuten shopping inför reorna (Rebajas)!</p>
+                                        <p class="text-xs font-bold text-med-olive">FREDAG 3 JULI - UTFLYKTSDAGEN (CAMINITO DEL REY) 🥾</p>
+                                        <p class="text-xs text-gray-600 mt-1">Dags för ert livs mest spektakulära vandring! Samling på Avenida de Andalucía 10 för er guidade dagsutflykt till El Chorro. <span class="text-red-700 font-bold">Märk väl:</span> Ni startar på plats redan kl. 08:00, vilket innebär avresa från Málaga senast <b>kl. 06:30</b>! Packa stadiga skor.</p>
                                     </div>
                                 </div>
 
                                 <div class="flex gap-3">
                                     <div class="flex flex-col items-center">
-                                        <div class="w-8 h-8 rounded-full bg-med-olive text-white flex items-center justify-center font-bold text-xs">04</div>
+                                        <div class="w-8 h-8 rounded-full bg-med-terracotta text-white flex items-center justify-center font-bold text-xs">04</div>
                                         <div class="w-0.5 bg-gray-200 flex-1"></div>
                                     </div>
                                     <div class="pb-4">
-                                        <p class="text-xs font-bold text-med-olive">LÖRDAG 4 JULI - UTFLYKTSDAGEN (CAMINITO DEL REY) 🥾</p>
-                                        <p class="text-xs text-gray-600 mt-1">Dags för ert livs mest spektakulära vandring! Samling på Avenida de Andalucía 10 för er guidade dagsutflykt till El Chorro och Caminito del Rey. På kvällen: Livekonsert med Lia Kali på anrika Plaza de Toros!</p>
+                                        <p class="text-xs font-bold text-med-terracotta">LÖRDAG 4 JULI - MÁLAGAS TAK & KATEDRAL 🏛️</p>
+                                        <p class="text-xs text-gray-600 mt-1">Besök katedralen och boka in den spännande takvandringen på katedralens kupol. Sista-minuten shopping inför reorna (Rebajas)! På kvällen: Livekonsert med Lia Kali på anrika Plaza de Toros!</p>
                                     </div>
                                 </div>
 
@@ -417,7 +385,7 @@
                                     </div>
                                     <div class="pb-4">
                                         <p class="text-xs font-bold text-med-terracotta">SÖNDAG 5 JULI - JONATHAN ANLÄNDER & MIDDAGSMYS 🍕</p>
-                                        <p class="text-xs text-gray-600 mt-1">Rolig familjeträff! Sonen Jonathan kommer till Málaga med sina kompisar idag. Under eftermiddagen eller kvällen möter ni upp hela gänget för en riktigt trevlig och livfull middag tillsammans. Perfekt tillfälle att fira er sista kväll i Andalusien och höra om deras planer!</p>
+                                        <p class="text-xs text-gray-600 mt-1">Rolig familjeträff! Sonen Jonathan kommer till Málaga med sina kompisar idag. Under eftermiddagen eller kvällen möter ni upp hela gänget för en riktigt trevlig och livfull middag tillsammans. Perfekt tillfälle att fira er sista kväll i Andalusien!</p>
                                     </div>
                                 </div>
 
@@ -436,152 +404,167 @@
                     </div>
                 </div>
 
-                <!-- Flight & Accommodation Block -->
+                <!-- CATEGORY: Travel Info & Accommodation -->
                 <div class="category-block" data-category="reseinfo">
                     <h3 class="font-serif text-2xl font-bold text-med-teal mb-4 border-b pb-2 border-teal-100 flex items-center">
-                        <span class="mr-2">✈️</span> Praktisk Reseinfo & Boende
+                        <span class="mr-2">✈️</span> Reseinfo & Boendedetaljer
                     </h3>
+                    
                     <div class="space-y-6">
-                        <!-- Flight Details Card -->
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-teal-50 hover:shadow-md transition-all duration-300 card-item" id="card-flight-details">
-                            <div class="relative bg-gradient-to-r from-teal-500 to-teal-700 p-6 text-white">
-                                <div class="flex justify-between items-center mb-4">
-                                    <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Direktflyg tur & retur</span>
-                                    <span class="text-xs opacity-90"><i class="fa-solid fa-plane-up"></i> Norwegian Air</span>
-                                </div>
-                                <h4 class="font-serif text-2xl font-bold">Resedetaljer: Göteborg (GOT) ⇄ Málaga (AGP)</h4>
-                                <p class="text-teal-100 text-sm mt-1">Söndag 28 juni – Måndag 6 juli 2026</p>
-                            </div>
-                            <div class="p-6">
-                                <!-- Render Flight Image Verbatim -->
-                                <div class="mb-4 rounded-xl overflow-hidden border border-gray-100 shadow-inner">
-                                    <img src="image_8f8862.jpg" alt="Dina flyg - Detaljer" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80';">
-                                </div>
-                                
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
-                                    <div class="bg-teal-50/50 p-4 rounded-2xl border border-teal-100/50">
-                                        <p class="font-bold text-teal-800 flex items-center gap-1.5 mb-1">
-                                            <i class="fa-solid fa-plane-departure"></i> Utresa: Sön 28 juni 2026
-                                        </p>
-                                        <p class="font-semibold text-gray-900">10:45 (GOT) ➔ 14:30 (AGP)</p>
-                                        <p class="text-xs text-gray-500 mt-1">Direktflyg • Restid: 3h 45min • Norwegian Air</p>
-                                    </div>
-                                    <div class="bg-teal-50/50 p-4 rounded-2xl border border-teal-100/50">
-                                        <p class="font-bold text-teal-800 flex items-center gap-1.5 mb-1">
-                                            <i class="fa-solid fa-plane-arrival"></i> Hemresa: Mån 06 juli 2026
-                                        </p>
-                                        <p class="font-semibold text-gray-900">07:10 (AGP) ➔ 10:55 (GOT)</p>
-                                        <p class="text-xs text-gray-500 mt-1">Direktflyg • Restid: 3h 45min • Norwegian Air Sweden</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- Accommodation Card -->
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-teal-50 hover:shadow-md transition-all duration-300 card-item" id="card-accommodation-details">
-                            <div class="relative h-60 sm:h-72">
-                                <!-- Render Accommodation Image Verbatim -->
-                                <img src="image_8f888a.png" alt="Homely Málaga Mariblanca 17, Vegafuente Apartments" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80';">
-                                <span class="absolute top-4 left-4 bg-med-teal text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Vårt Boende</span>
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-teal-100 hover:shadow-md transition-all duration-300 card-item" id="card-accommodation-details">
+                            <div class="relative h-56 sm:h-64">
+                                <img src="image_8f888a.png" 
+                                     alt="Homely Málaga Mariblanca 17" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-teal text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Bokat Boende</span>
                             </div>
                             <div class="p-6">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-serif text-2xl font-bold text-med-darkOlive">Homely Málaga Mariblanca 17</h4>
-                                    <div class="flex items-center text-amber-400 gap-0.5">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-1">Homely Málaga Mariblanca 17</h4>
+                                <p class="text-xs text-gray-500 mb-4"><i class="fa-solid fa-map-pin text-med-teal mr-1"></i> Calle Mariblanca 17, Malaga Centro, 29012 Málaga</p>
+                                
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Ert moderna och fantastiska boende i hjärtat av Málagas gamla stadsdelar. Med vackra takbjälkar, fräscha rum och fullutrustat kök bor ni mitt i det bilfria centrumet med nära till restauranger, katedralen och butiker.
+                                </p>
+                                
+                                <div class="bg-teal-50 p-3 rounded-xl text-xs text-teal-900 border border-teal-100 flex items-start gap-2 mb-4">
+                                    <i class="fa-solid fa-circle-check text-med-teal mt-0.5"></i>
+                                    <div>
+                                        <p class="font-bold">Utmärkt läge – betyg 9.6/10</p>
+                                        <p class="mt-0.5 leading-relaxed text-gray-600">
+                                            Lugn gata i centrum utan biltrafik, perfekt belägen för kvällspromenader och nära till allt ni vill göra!
+                                        </p>
                                     </div>
                                 </div>
-                                <p class="text-xs text-teal-700 font-bold mb-3 flex items-center gap-1">
-                                    <i class="fa-solid fa-location-dot"></i> Calle Mariblanca 17, Malaga Centro, 29012 Málaga, Spanien
-                                </p>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Ert eleganta hem i hjärtat av Málaga! Denna topprankade och fantastiskt inredda lägenhet bjuder på vackra träbjälkar, tegelväggar och ett perfekt läge i de historiska kvarteren (Centro). Härifrån har ni gångavstånd till precis allt: katedralen, shoppingen på Calle Larios, de gamla gränderna fyllda av tapasbarer samt hamnen och stranden.
-                                </p>
-                                <div class="flex flex-wrap items-center justify-between gap-3 border-t pt-4 border-teal-50">
-                                    <button onclick="focusOnLocation(36.7241, -4.4214, 'Homely Málaga Mariblanca 17', 17)" class="text-xs font-bold text-med-teal hover:underline flex items-center gap-1.5">
-                                        <i class="fa-solid fa-house-chimney-window"></i> Hitta boendet på kartan
+
+                                <div class="flex items-center gap-3">
+                                    <button onclick="focusOnLocation(36.7241, -4.4214, 'Homely Málaga Mariblanca 17', 17)" class="bg-med-teal hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1.5">
+                                        <i class="fa-solid fa-location-crosshairs"></i> Visa på kartan
                                     </button>
-                                    <a href="https://www.booking.com/hotel/es/homely-malaga-mariblanca-17-vegafuente-apartments.sv.html" target="_blank" class="bg-med-teal hover:bg-teal-800 text-white text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1">
-                                        Visa på Booking.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    <a href="https://www.booking.com/hotel/es/homely-malaga-mariblanca-17-vegafuente-apartments.sv.html" target="_blank" class="text-xs text-med-teal font-semibold hover:underline flex items-center gap-1">
+                                        Visa reservation <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Flight Details Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-teal-50 hover:shadow-md transition-all duration-300 card-item" id="card-flight-details">
+                            <div class="relative h-48 sm:h-56">
+                                <img src="image_8f8862.jpg" 
+                                     alt="Norwegian Air Flight" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Bekräftat Flyg</span>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-serif text-lg font-bold text-med-dark mb-4">Dina flygresor (Norwegian Air)</h4>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                                        <div>
+                                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-bold">UTRESA: SÖNDAG 28 JUNI</p>
+                                            <p class="font-semibold text-gray-800 text-sm mt-1">Göteborg (GOT) ➔ Málaga (AGP)</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-bold text-med-teal text-base">10:45 – 14:30</p>
+                                            <p class="text-[10px] text-gray-500 font-semibold mt-0.5">Direkt • 3h 45m</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex justify-between items-center bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                                        <div>
+                                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-bold">HEMRESA: MÅNDAG 6 JULI</p>
+                                            <p class="font-semibold text-gray-800 text-sm mt-1">Málaga (AGP) ➔ Göteborg (GOT)</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-bold text-red-600 text-base">07:10 – 10:55</p>
+                                            <p class="text-[10px] text-gray-500 font-semibold mt-0.5">Direkt • 3h 45m</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Susann's 50th Birthday Special Category Block -->
+
+                <!-- CATEGORY: Celebration 1 July -->
                 <div class="category-block" data-category="birthday">
                     <h3 class="font-serif text-2xl font-bold text-med-goldBright mb-4 border-b pb-2 border-amber-200 flex items-center">
-                        <span class="mr-2">✨</span> Onsdagen den 1 Juli: Förslag till födelsedagen
+                        <span class="mr-2">✨</span> Susanns 50-årsdag – 1 Juli
                     </h3>
+                    
                     <div class="space-y-6">
-                        <!-- Step 1: Arabic Baths (Hammam) -->
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-amber-100 hover:shadow-md transition-shadow duration-300 card-item birthday-card" id="card-hammam">
+                        <!-- Botanical Garden Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-amber-200 hover:shadow-md transition-shadow duration-300 card-item birthday-card" id="card-botanico-birthday">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
-                                     alt="Hammam Al Ándalus" 
+                                <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Botanical Garden Malaga" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/DDA15E/ffffff?text=Hammam+Al+Ándalus'">
-                                <span class="absolute top-4 left-4 bg-med-goldBright text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Förslag: Förmiddagslyx</span>
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-gradient-to-r from-med-goldBright to-med-terracotta text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">👑 Förmiddag: Naturparadis</span>
                             </div>
                             <div class="p-6">
-                                <h4 class="font-serif text-xl font-bold text-med-darkOlive mb-2">Hammam Al Ándalus – Avkoppling i morisk miljö</h4>
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Jardín Botánico Histórico La Concepción</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Starta Susanns födelsedag med total avkoppling. Dessa underbara arabiska bad ligger gömda i en historisk byggnad i gamla stan. Här glider ni fram i ljumma, varma och kalla källor under stjärnformade taköppningar, omgivna av vackra mosaiker, doftande eteriska oljor och lugnande musik. En massage med andalusiska oljor ingår givetvis!
+                                    Börja Susanns 50-årsdag med en magisk och lugn morgonpromenad i denna historiska, sagolikt prunkande palatsträdgård från 1800-talet. Belägen strax norr om stadskärnan är den fylld av lummiga tropiska träd, romantiska stendomar, vattenfall, porlande bäckar och exotiska växter under palmbladen. 
                                 </p>
-                                <div class="flex items-center justify-between border-t pt-4 border-amber-50">
-                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-goldBright mr-1"></i> Plaza de los Mártires Ciriaco y Paula, 5</span>
-                                    <button onclick="focusOnLocation(36.7226, -4.4221, 'Hammam Al Ándalus', 16)" class="text-xs font-bold text-med-goldBright hover:underline flex items-center gap-1">
+                                <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100 text-xs text-amber-900 mb-4">
+                                    <p class="font-bold mb-1"><i class="fa-solid fa-crown text-med-gold"></i> Varför det är perfekt för Susann:</p>
+                                    <p class="leading-relaxed">
+                                        Kombinationen av vacker andalusisk arkitektur (det anrika palatshuset), rofylld natur och den spektakulära utsikten över Málagas siluett gör detta till en helt underbar start på en minnesvärd födelsedag.
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-gold mr-1"></i> Camino del Jardín Botánico, 3</span>
+                                    <button onclick="focusOnLocation(36.7592, -4.4312, 'Jardín Botánico Histórico La Concepción', 13)" class="text-xs font-bold text-med-goldBright hover:underline flex items-center gap-1">
                                         Visa på kartan <i class="fa-solid fa-arrow-right"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 2: Rooftop bar (AC Hotel Malaga Palacio) -->
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-amber-100 hover:shadow-md transition-shadow duration-300 card-item birthday-card" id="card-rooftop-toast">
+                        <!-- Rooftop Toast Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-rooftop-toast">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=800&q=80" 
-                                     alt="Rooftop Toast" 
+                                <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Sunset Toast Malaga Palacio" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/D47A53/ffffff?text=Rooftop+Malaga'">
-                                <span class="absolute top-4 left-4 bg-med-goldBright text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Förslag: Solnedgångsskål</span>
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513581105407-c4144e8774e7?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-goldBright text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">🍷 Solnedgång: 50-årsskål!</span>
                             </div>
                             <div class="p-6">
-                                <h4 class="font-serif text-xl font-bold text-med-darkOlive mb-2">360°-Skål på AC Hotel Málaga Palacio</h4>
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Takterrasskål på AC Hotel Málaga Palacio</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Innan middagen tar ni hissen upp till Málagas mest ikoniska takterrass på 15:e våningen. Här beställer ni in ett glas välkyld spansk Cava eller en drink, njuter av den härliga lounge-musiken och blickar ut över katedralens dom, gamla stan, marinan och solnedgången över bergen. Den perfekta kulissen för födelsedagsfotot!
+                                    Inför kvällen tar ni hissen upp till 15:e våningen på AC Hotel Málaga Palacio. Detta är stadens mest kända takbar och bjuder på en helt makalös 360-graders utsikt över katedralen, den moderna hamnen, havet och de upplysta borgmurarna. En perfekt plats för att skåla för Susann med ett gott glas spansk cava i solnedgången!
                                 </p>
-                                <div class="flex items-center justify-between border-t pt-4 border-amber-50">
-                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-goldBright mr-1"></i> Calle Cortina del Muelle, 1</span>
-                                    <button onclick="focusOnLocation(36.7196, -4.4198, 'AC Hotel Málaga Palacio (Rooftop Toast)', 16)" class="text-xs font-bold text-med-goldBright hover:underline flex items-center gap-1">
+                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-gold mr-1"></i> Calle Cortina del Muelle, 1</span>
+                                    <button onclick="focusOnLocation(36.7196, -4.4198, 'AC Hotel Málaga Palacio (Rooftop Toast)')" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
                                         Visa på kartan <i class="fa-solid fa-arrow-right"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Step 3: Cozy Tapas Night -->
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-amber-100 hover:shadow-md transition-shadow duration-300 card-item birthday-card" id="card-tapas-dinner">
+                        <!-- Bodega El Pimpi Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-pimpi-dinner">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?auto=format&fit=crop&w=800&q=80" 
-                                     alt="Tapas Night" 
+                                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Bodega El Pimpi Malaga" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/DDA15E/ffffff?text=Tapas+i+Málaga'">
-                                <span class="absolute top-4 left-4 bg-med-goldBright text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Förslag: Genuin Tapaskväll</span>
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1543083477-4f785ae82753?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-gold text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">🍤 Kväll: Stämningsfull tapas</span>
                             </div>
                             <div class="p-6">
-                                <h4 class="font-serif text-xl font-bold text-med-darkOlive mb-2">Stämningsfull tapaskväll i Gamla Stan</h4>
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Bodega El Pimpi – Klassisk andalusisk födelsedagsmiddag</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Skippa dyra och uppstyrda middagar och satsa i stället på en levande, spansk och helt prestigelös tapasrunda! Ni kan strosa runt i gamla stan och välja restauranger helt efter humör på kvällen. Ett underunderbart tips för en festlig men plånboksvänlig stämning är den historiska vinkällaren <span class="font-semibold text-med-darkOlive">Bodega El Pimpi</span>. Här äter ni fantastiska, klassiska smårätter omgivna av gigantiska vintunnor i en labyrint av charmiga spanska rum. Helt rätt stämning för en 50-årsdag!
+                                    Som ett underbart, flexibelt och plånboksvänligt förslag för födelsedagskvällen föreslår vi en tapaskväll på anrika <b>Bodega El Pimpi</b>. Detta är en otroligt charmig, labyrintliknande vinkällare fylld av spansk historia, vackra azulejo-kakelplattor, blommor och gamla sherryfat signerade av kändisar (bland annat Antonio Banderas!). Här kan ni äta fantastiska, prisvärda smårätter och njuta av det livliga spanska sorlet.
                                 </p>
-                                <div class="flex items-center justify-between border-t pt-4 border-amber-50">
-                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-goldBright mr-1"></i> Calle Granada, 62</span>
-                                    <button onclick="focusOnLocation(36.7218, -4.4172, 'Bodega El Pimpi (Tapasförslag)', 16)" class="text-xs font-bold text-med-goldBright hover:underline flex items-center gap-1">
+                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-gold mr-1"></i> Calle Granada, 62</span>
+                                    <button onclick="focusOnLocation(36.7218, -4.4172, 'Bodega El Pimpi (Tapasförslag)')" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
                                         Visa på kartan <i class="fa-solid fa-arrow-right"></i>
                                     </button>
                                 </div>
@@ -590,7 +573,153 @@
                     </div>
                 </div>
 
-                <!-- Kultur & Byggnader section -->
+                <!-- CATEGORY: Daytrips to white villages & Car rental -->
+                <div class="category-block" data-category="byar">
+                    <h3 class="font-serif text-2xl font-bold text-med-purple mb-4 border-b pb-2 border-purple-100 flex items-center">
+                        <span class="mr-2">🚗</span> Andalusiska byar & Hyrbilsguide
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        
+                        <!-- Car Rental Guide Card -->
+                        <div class="bg-purple-50/40 rounded-3xl p-6 border border-purple-100 shadow-sm card-item" id="card-car-rental-guide">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="bg-med-purple text-white p-2.5 rounded-xl">
+                                    <i class="fa-solid fa-key text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-xl font-bold text-med-darkOlive">Guide: Hyra bil i Málaga</h4>
+                                    <p class="text-xs text-gray-500">Hur ni enklast och tryggast hyr bil nära ert boende</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4 text-sm text-gray-700">
+                                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                                    <h5 class="font-bold text-med-purple flex items-center gap-1.5 mb-1.5 text-xs">
+                                        <i class="fa-solid fa-location-dot"></i> Närmaste hyrbilsnav: Centralstationen
+                                    </h5>
+                                    <p class="text-xs text-gray-600 leading-relaxed mb-3">
+                                        Istället för att åka hela vägen tillbaka till flygplatsen rekommenderar vi starkt att hämta hyrbilen vid centralstationen <b>Málaga María Zambrano</b>. Den ligger bara cirka 2 km (7-8 min taxi, ca €6–€8) från er lägenhet på Mariblanca 17.
+                                    </p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-3">
+                                        <div class="bg-purple-50/40 p-2.5 rounded-lg border border-purple-100/50">
+                                            <p class="font-bold text-purple-900">Record Go (Rekommenderas!)</p>
+                                            <p class="text-gray-500 mt-0.5">Ligger precis utanför stationen (Calle Explanada de la Estación 6). Mycket prisvärt och erbjuder full täckning utan deposit.</p>
+                                        </div>
+                                        <div class="bg-purple-50/40 p-2.5 rounded-lg border border-purple-100/50">
+                                            <p class="font-bold text-purple-900">Enterprise / Sixt / Hertz</p>
+                                            <p class="text-gray-500 mt-0.5">Samtliga har stora, välskötta kontor direkt inne på stationen och smidig återlämning dygnet runt i parkeringsgaraget.</p>
+                                        </div>
+                                    </div>
+                                    <button onclick="focusOnLocation(36.7121, -4.4318, 'Málaga María Zambrano Station (Hyrbilsnav)', 16)" class="bg-med-purple hover:bg-purple-800 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-all flex items-center gap-1 shadow-sm">
+                                        <i class="fa-solid fa-location-crosshairs"></i> Visa stationen på kartan
+                                    </button>
+                                </div>
+
+                                <div class="bg-amber-50/40 p-4 rounded-xl border border-amber-100 text-xs">
+                                    <p class="font-bold text-amber-800 flex items-center gap-1.5 mb-2 uppercase tracking-wider">
+                                        <i class="fa-solid fa-triangle-exclamation"></i> Mycket viktiga tips för bilhyra i Spanien
+                                    </p>
+                                    <ul class="list-disc pl-4 space-y-2 text-gray-700">
+                                        <li><span class="font-semibold text-gray-900">Kreditkort vs. Betalkort:</span> De flesta traditionella firmor kräver ett <b>fysiskt kreditkort</b> i förarens namn för en deposition (ofta €1000+). Om ni bara har betalkort tillåter <i>Record Go</i> detta <b>OM</b> ni köper till deras heltäckande försäkring (Zero Excess).</li>
+                                        <li><span class="font-semibold text-gray-900">Välj "Zero Excess / Ingen självrisk":</span> Andalusiens vägar kan vara extremt smala, speciellt i de vita bergsbyarna där möten sker centimeter från stenhusväggar. Att teckna till fullförsäkring är ovärderligt för sinnesron.</li>
+                                        <li><span class="font-semibold text-gray-900">Parkering i Centro (Varning!):</span> Ert boende på Mariblanca 17 ligger mitt i Málagas bilfria gamla stan. <b>Försök inte köra in till lägenheten.</b> Hyr bil enbart över dagen, eller parkera i närliggande p-huset <i>Parking Granados</i> (ca €25/dygn).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mijas Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-purple-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-mijas">
+                            <div class="relative h-52 sm:h-64">
+                                <img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Mijas Pueblo" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Vit Bergsby</span>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Mijas Pueblo – Vita hus & Kustvyer</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    En fantastisk och pittoresk vit by (Pueblo Blanco) belägen på bergssluttningen cirka 30 minuter väster om Málaga. Här slingrar sig vitkalkade hus smyckade med färgglada blomkrukor längs kullerstensgatorna. Byn bjuder på en helt makalös utsikt över hela kusten.
+                                </p>
+                                <div class="bg-purple-50/50 p-3 rounded-2xl border border-purple-100 text-xs text-purple-900 mb-4">
+                                    <p class="font-semibold mb-1"><i class="fa-solid fa-compass"></i> Utflyktstips:</p>
+                                    <p class="leading-relaxed">
+                                        Vandra i den vackra parken <i>Muralla</i> som ligger på klippkanten av de gamla fästningsmurarna. Perfekt för en glasspaus under eftermiddagen!
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-purple mr-1"></i> 30 km väster om Málaga</span>
+                                    <button onclick="focusOnLocation(36.6000, -4.6300, 'Mijas Pueblo', 14)" class="text-xs font-bold text-med-purple hover:underline flex items-center gap-1">
+                                        Visa på kartan <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frigiliana Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-purple-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-frigiliana">
+                            <div class="relative h-52 sm:h-64">
+                                <img src="https://images.unsplash.com/photo-1505881506039-75a133d1c4e0?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Frigiliana" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Andalusiens Vackraste By</span>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Frigiliana – Blommor & Blå dörrar</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Frigiliana röstas nästan varje år fram till Spaniens absolut vackraste och mest välbevarade by. Här är gatorna bilfria, med vitkalkade väggar kontrasterade av djupt klarblå eller olivgröna dörrar och fönsterluckor.
+                                </p>
+                                <div class="bg-purple-50/50 p-3 rounded-2xl border border-purple-100 text-xs text-purple-900 mb-4">
+                                    <p class="font-semibold mb-1"><i class="fa-solid fa-lightbulb"></i> Smakfullt tips:</p>
+                                    <p class="leading-relaxed">
+                                        Prova rätten *Berenjenas con Miel de Caña* (friterad aubergine ringlad med lokal sockerrörssirap) på någon av byns underbara takrestauranger!
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-purple mr-1"></i> 55 km öster om Málaga</span>
+                                    <button onclick="focusOnLocation(36.7875, -3.8944, 'Frigiliana', 14)" class="text-xs font-bold text-med-purple hover:underline flex items-center gap-1">
+                                        Visa på kartan <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nerja Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-purple-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-nerja">
+                            <div class="relative h-52 sm:h-64">
+                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Nerja Coastline" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-purple text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Kustpärla & Klippor</span>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Nerja – Balcón de Europa</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    En fantastisk kuststad strax nedanför Frigiliana. Staden är berömd för <i>Balcón de Europa</i>, en storslagen utsiktsplatå byggd på en gammal fästningsklippa som bjuder på en oslagbar vy över det öppna Medelhavet.
+                                </p>
+                                <div class="bg-purple-50/50 p-3 rounded-2xl border border-purple-100 text-xs text-purple-900 mb-4">
+                                    <p class="font-semibold mb-1"><i class="fa-solid fa-star"></i> Missa inte:</p>
+                                    <p class="leading-relaxed">
+                                        De berömda och gigantiska droppstensgrottorna i Nerja (<i>Cuevas de Nerja</i>) som ligger alldeles i närheten!
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-purple mr-1"></i> 50 km öster om Málaga</span>
+                                    <button onclick="focusOnLocation(36.7880, -3.8383, 'Nerja', 14)" class="text-xs font-bold text-med-purple hover:underline flex items-center gap-1">
+                                        Visa på kartan <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CATEGORY: Kultur & Byggnader section -->
                 <div class="category-block" data-category="kultur">
                     <h3 class="font-serif text-2xl font-bold text-med-darkOlive mb-4 border-b pb-2 border-orange-100 flex items-center">
                         <span class="mr-2">🏛️</span> Kultur & Vackra byggnader
@@ -599,17 +728,23 @@
                         <!-- Alcazaba -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-alcazaba">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80" 
+                                <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80" 
                                      alt="Alcazaba de Málaga" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/D47A53/ffffff?text=Alcazaba+Málaga'">
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1503917988258-f87a78e3c995?auto=format&fit=crop&w=1200&q=80';">
                                 <span class="absolute top-4 left-4 bg-med-darkOlive text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Kultur</span>
                             </div>
                             <div class="p-6">
-                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Alcazaba de Málaga</h4>
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Alcazaba de Málaga & Romerska Teatern</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Ett bäst bevarat moriskt palatsfort i Spanien. Det slingrar sig uppför kullen mitt i centrala staden med fantastiska prunkande trädgårdar, färgstarka blomslingor och porlande vattenfontäner. Perfekt att besöka tidigt på förmiddagen innan värmen stiger.
+                                    Ett bäst bevarat moriskt palatsfort i Spanien. Det slingrar sig uppför kullen mitt i centrala staden med fantastiska prunkande trädgårdar och porlande vattenfontäner.
                                 </p>
+                                <div class="bg-amber-50/70 p-3 rounded-2xl border border-amber-200 mb-4 text-xs text-amber-900">
+                                    <p class="font-bold mb-1"><i class="fa-solid fa-lightbulb"></i> Tips från bekanta:</p>
+                                    <p class="leading-relaxed font-semibold">
+                                        Missa inte den pampiga romerska amfiteatern som ligger precis vid foten av borgen. Väl därinne är det absolut värt att gå runt hela fästningen. Det bjuds på en fantastisk utsikt över staden och hamnen, och det finns en jättetrevlig glass- och dryckesservering på en lummig terrass inuti borgen för en välbehövlig svalka!
+                                    </p>
+                                </div>
                                 <div class="flex items-center justify-between border-t pt-4 border-gray-50">
                                     <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-terracotta mr-1"></i> Calle Alcazabilla, 2</span>
                                     <button onclick="focusOnLocation(36.7208, -4.4168, 'Alcazaba de Málaga')" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
@@ -619,19 +754,50 @@
                             </div>
                         </div>
 
+                        <!-- Castillo de Gibralfaro -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-gibralfaro">
+                            <div class="relative h-52 sm:h-64">
+                                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Castillo de Gibralfaro" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508849789987-4e5333c12b78?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-terracotta text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Alternativt Förslag</span>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Castillo de Gibralfaro – Málagas högsta borg</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Gibralfaro är en fästning från 1300-talet som tronar ännu högre upp på berget bakom Alcazaba och bjuder på Málagas mest ikoniska panoramavy.
+                                </p>
+                                <div class="bg-red-50 p-3.5 rounded-2xl border border-red-100 mb-4 text-xs text-red-900">
+                                    <p class="font-bold text-red-800 mb-1 flex items-center gap-1">
+                                        <i class="fa-solid fa-temperature-high text-amber-500 animate-pulse"></i> Viktigt tips angående promenaden:
+                                    </p>
+                                    <p class="leading-relaxed text-xs">
+                                        Vägen upp går via väldigt branta stigar och trappor. <span class="font-bold text-red-800">Det blir extremt varmt under sommarsolen!</span> Våra bekanta promenerade upp här i 37-graders värme och rekommenderar starkt att ta mycket vatten, bra skor eller att helt enkelt åka med stadsbuss 35 upp till entrén och bara promenera ner!
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-terracotta mr-1"></i> Camino de Gibralfaro, 11</span>
+                                    <button onclick="focusOnLocation(36.7230, -4.4111, 'Castillo de Gibralfaro', 15)" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
+                                        Visa på kartan <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Catedral de Málaga -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-catedral">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=800&q=80" 
+                                <img src="https://images.unsplash.com/photo-1547483238-f400e65ccd56?auto=format&fit=crop&w=1200&q=80" 
                                      alt="Catedral de Málaga" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/D47A53/ffffff?text=Catedral+de+Málaga'">
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&w=1200&q=80';">
                                 <span class="absolute top-4 left-4 bg-med-darkOlive text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Kultur</span>
                             </div>
                             <div class="p-6">
                                 <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Catedral de Málaga (La Manquita)</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Kallas "den enarmade damen" eftersom det södra tornet aldrig färdigställdes. Denna enorma renässanskatedral har en helt hisnande takhöjd på insidan. Missa inte att boka takvandringen för att promenera på domens kupolformade tak och blicka ut över hela Málaga.
+                                    Kallas "den enarmade damen" eftersom det södra tornet aldrig färdigställdes. Denna enorma renässanskatedral har en helt hisnande takhöjd på insidan. Missa inte att boka takvandringen!
                                 </p>
                                 <div class="flex items-center justify-between border-t pt-4 border-gray-50">
                                     <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-terracotta mr-1"></i> Calle Molina Lario, 9</span>
@@ -644,7 +810,7 @@
                     </div>
                 </div>
 
-                <!-- Vandring & Naturäventyr section -->
+                <!-- CATEGORY: Vandring & Naturäventyr section -->
                 <div class="category-block" data-category="vandring">
                     <h3 class="font-serif text-2xl font-bold text-med-darkOlive mb-4 border-b pb-2 border-orange-100 flex items-center">
                         <span class="mr-2">🥾</span> Vandring & Natur
@@ -653,22 +819,22 @@
                         <!-- Caminito del Rey Info Card -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-caminito">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" 
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" 
                                      alt="Caminito del Rey" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/606C38/ffffff?text=Caminito+del+Rey'">
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&q=80';">
                                 <span class="absolute top-4 left-4 bg-med-olive text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Vandring</span>
                             </div>
                             <div class="p-6">
                                 <div class="flex justify-between items-start mb-2">
                                     <h4 class="font-serif text-xl font-bold text-med-dark">Caminito del Rey Vandringsinformation</h4>
-                                    <span class="bg-green-50 text-green-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wide border border-green-100">BOKAD LÖR 4 JULI!</span>
+                                    <span class="bg-green-50 text-green-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wide border border-green-100">BOKAD FRE 3 JULI - KL. 08:00</span>
                                 </div>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    En fullkomligt magnifik, hisnande dagsutflykt. Vandringen går längs smala gångbroar fastbultade i klipporna över hundra meter upp i klyftan El Chorro. Biljetter är nu bokade för er (Svenska & engelska guider). Ni åker bekvämt i ett luftkonditionerat fordon med upphämtning i Málaga city.
+                                    En fullkomligt magnifik, hisnande dagsutflykt. Vandringen går längs smala gångbroar fastbultade i klipporna över hundra meter upp i klyftan El Chorro. Biljetter är nu bokade för er med guidad tur på plats. <span class="text-red-700 font-semibold">Tidigt schema:</span> Ni ska starta kl. 08:00 på plats vilket kräver tidig transport (avfärd ca kl. 06:30 från Málaga Centro).
                                 </p>
                                 <div class="flex items-center justify-between border-t pt-4 border-gray-50">
-                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-bus text-med-olive mr-1"></i> Upphämtning: Av. de Andalucía 10</span>
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-bus text-med-olive mr-1"></i> Upphämtnings: Av. de Andalucía 10</span>
                                     <button onclick="focusOnLocation(36.7176, -4.4283, 'Upphämtningsplats: Caminito del Rey', 17)" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
                                         Visa upphämtning på kartan <i class="fa-solid fa-arrow-right"></i>
                                     </button>
@@ -679,16 +845,16 @@
                         <!-- Montes de Málaga -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-montes">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&w=800&q=80" 
+                                <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80" 
                                      alt="Montes de Málaga" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/606C38/ffffff?text=Montes+de+Málaga'">
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80';">
                                 <span class="absolute top-4 left-4 bg-med-olive text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Natur</span>
                             </div>
                             <div class="p-6">
                                 <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Parque Natural Montes de Málaga</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Stadens gröna lungor som ligger precis norr om staden. Perfekt för lummiga tallskogsvandringar. Det finns flertalet rutter med olika längder. Efter vandringen är det nästan obligatoriskt att äta en mustig "Plato de los Montes" på någon av de traditionella "ventas" (rustika vägrestauranger) i parken.
+                                    Stadens gröna lungor som ligger precis norr om staden. Perfekt för lummiga tallskogsvandringar. Det finns flertalet rutter med olika längder. Efter vandringen kan ni äta en mustig "Plato de los Montes" på någon av de traditionella "ventas"!
                                 </p>
                                 <div class="flex items-center justify-between border-t pt-4 border-gray-50">
                                     <span class="text-xs text-gray-500"><i class="fa-solid fa-car text-med-olive mr-1"></i> 20 min norr om centrum</span>
@@ -701,7 +867,7 @@
                     </div>
                 </div>
 
-                <!-- Shopping & Second Hand section -->
+                <!-- CATEGORY: Shopping & Second Hand section -->
                 <div class="category-block" data-category="shopping">
                     <h3 class="font-serif text-2xl font-bold text-med-darkOlive mb-4 border-b pb-2 border-orange-100 flex items-center">
                         <span class="mr-2">🛍️</span> Shopping & Second Hand
@@ -710,17 +876,21 @@
                         <!-- Calle Larios -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-larios">
                             <div class="relative h-48">
-                                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=600&q=80" 
+                                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80" 
                                      alt="Calle Larios" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/0088cc/ffffff?text=Calle+Larios'">
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513581105407-c4144e8774e7?auto=format&fit=crop&w=1200&q=80';">
                                 <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Shopping</span>
                             </div>
                             <div class="p-5">
                                 <h4 class="font-serif text-lg font-bold text-med-dark mb-1">Calle Marqués de Larios</h4>
-                                <p class="text-gray-600 text-xs leading-relaxed mb-4">
-                                    Málagas marmorklädda paradgata med fantastiska butiker. Den är helt bilfri och perfekt för fönstershopping och att se det glada andalusiska folklivet susa förbi.
+                                <p class="text-gray-600 text-xs leading-relaxed mb-3">
+                                    Málagas marmorklädda paradgata med fantastiska boutiques. Den är helt bilfri och bjuder på en härlig storstadskänsla mitt i semestern!
                                 </p>
+                                <div class="bg-blue-50/50 p-2.5 rounded-xl border border-blue-100 text-[10px] text-blue-900 mb-3">
+                                    <p class="font-bold mb-0.5"><i class="fa-solid fa-umbrella"></i> Svalt tips från bekanta:</p>
+                                    <p class="leading-relaxed">Här hänger de upp gigantiska, vackra tygstycken över hela gatan i luften för att ge skugga åt flanerande besökare under sommaren. Det ger en fantastisk inramning och ett otroligt mysigt myller under det skuggade solljuset!</p>
+                                </div>
                                 <div class="flex items-center justify-between border-t pt-3 border-gray-50">
                                     <span class="text-[10px] text-gray-500"><i class="fa-solid fa-map-pin text-blue-500 mr-1"></i> Centrum</span>
                                     <button onclick="focusOnLocation(36.7196, -4.4214, 'Calle Larios')" class="text-xs font-bold text-med-terracotta hover:underline">Visa <i class="fa-solid fa-angle-right"></i></button>
@@ -731,45 +901,108 @@
                         <!-- Soho & Calle Andrés Pérez -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-vintage">
                             <div class="relative h-48">
-                                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" 
+                                <img src="https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?auto=format&fit=crop&w=600&q=80" 
                                      alt="Vintage Shopping" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/0088cc/ffffff?text=Vintage+Shopping'">
-                                <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Vintage</span>
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Vintage & Art</span>
                             </div>
                             <div class="p-5">
-                                <h4 class="font-serif text-lg font-bold text-med-dark mb-1">Second Hand & Vintage i Soho</h4>
-                                <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                <h4 class="font-serif text-lg font-bold text-med-dark mb-1">Second Hand & Street Art i Soho</h4>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-3">
                                     För gömda guldgruvor, utforska stadsdelen Soho (söder om huvudleden) för trendiga indievintages eller de vindlande gränderna kring Calle Andrés Pérez i gamla stan.
                                 </p>
+                                <div class="bg-blue-50/50 p-2.5 rounded-xl border border-blue-100 text-[10px] text-blue-900 mb-3">
+                                    <p class="font-bold mb-0.5"><i class="fa-solid fa-palette"></i> Tips från bekanta:</p>
+                                    <p class="leading-relaxed">Missa inte att bara gå runt i Soho och titta på de gigantiska, häftiga väggmålningarna och skulpturerna. Det känns verkligen som ett kreativt och spännande kvarter där det skett en modern platsutveckling!</p>
+                                </div>
                                 <div class="flex items-center justify-between border-t pt-3 border-gray-50">
                                     <span class="text-[10px] text-gray-500"><i class="fa-solid fa-map-pin text-blue-500 mr-1"></i> Soho & Gamla Stan</span>
                                     <button onclick="focusOnLocation(36.7158, -4.4226, 'Soho Vintage & Second Hand')" class="text-xs font-bold text-med-terracotta hover:underline">Visa <i class="fa-solid fa-angle-right"></i></button>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Muelle Uno / Hamnen -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item col-span-1 md:col-span-2" id="card-muelle-uno">
+                            <div class="relative h-48 sm:h-56">
+                                <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Muelle Uno Malaga Port" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Alternativt Förslag</span>
+                            </div>
+                            <div class="p-5">
+                                <h4 class="font-serif text-lg font-bold text-med-dark mb-1">Muelle Uno – Den moderna hamnen</h4>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-3">
+                                    Málagas nybyggda, superfräscha hamnområde är fyllt av liv, modern arkitektur och en underbar strandpromenad med utsikt över fartygen och den ikoniska vita fyren (La Farola). 
+                                </p>
+                                <div class="bg-amber-50/70 p-3 rounded-2xl border border-amber-200 mb-3 text-xs text-amber-900">
+                                    <p class="font-bold mb-0.5"><i class="fa-solid fa-circle-info"></i> Bekantas restaurang-varning:</p>
+                                    <p class="leading-relaxed">Hamnområdet är extremt rent, öppet och fräscht att flanera runt i under kvällen. <span class="font-bold">Dock är matutbudet här inte det mest spännande eller genuint andalusiska</span> – det är mycket kedjor som Hard Rock Café m.m. För bästa och mest prisvärda matupplevelser rekommenderar vi att ni istället äter tapas inne i de bilfria kvarteren i gamla stan, och sparar hamnen för en härlig promenad och kanske en drink!</p>
+                                </div>
+                                <div class="flex items-center justify-between border-t pt-3 border-gray-50">
+                                    <span class-[10px] text-gray-500"><i class="fa-solid fa-map-pin text-blue-500 mr-1"></i> Muelle Uno, Hamnen</span>
+                                    <button onclick="focusOnLocation(36.7163, -4.4145, 'Muelle Uno (Hamnen)', 15)" class="text-xs font-bold text-med-terracotta hover:underline">Visa på kartan <i class="fa-solid fa-angle-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- God Mat & Marknader section -->
+                <!-- CATEGORY: God Mat & Marknader section -->
                 <div class="category-block" data-category="mat">
                     <h3 class="font-serif text-2xl font-bold text-med-darkOlive mb-4 border-b pb-2 border-orange-100 flex items-center">
                         <span class="mr-2">🍤</span> God mat & Gastronomi
                     </h3>
                     <div class="space-y-6">
+                        <!-- Playa de la Malagueta -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-malagueta-strand">
+                            <div class="relative h-52 sm:h-64">
+                                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Playa de la Malagueta" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80';">
+                                <span class="absolute top-4 left-4 bg-med-gold text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Alternativt Förslag: Stranden</span>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Playa de la Malagueta & Blodsocker-räddaren!</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    La Malagueta är Málagas kända stadsstrand, belägen bara en kort och trevlig promenad genom den lummiga parken från centrum.
+                                </p>
+                                <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 mb-4 text-xs text-amber-900">
+                                    <p class="font-bold text-amber-800 mb-1 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-triangle-exclamation text-orange-500 animate-bounce"></i> Livsviktigt tips för magen & blodsockret:
+                                    </p>
+                                    <p class="leading-relaxed mb-2">
+                                        Våra bekanta tyckte att <span class="font-bold">stranden var absolut finast och bäst på mitten-partiet!</span> De delar dock med sig av en mycket viktig varning inför lunchtid:
+                                    </p>
+                                    <p class="leading-relaxed font-semibold">
+                                        Om ni planerar att äta lunch på någon av de härliga restaurangerna direkt längs stranden MÅSTE ni boka bord i förväg! De är oftast helt fullbokade under sommaren då det är riktigt högkvalitativa restauranger, och att inte få bord kan leda till akuta blodsockerfall i värmen. Planera och boka lunchbordet i god tid!
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-gold mr-1"></i> Paseo Marítimo Pablo Ruiz Picasso</span>
+                                    <button onclick="focusOnLocation(36.7180, -4.4060, 'Playa de la Malagueta', 15)" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
+                                        Visa på kartan <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Mercado de Atarazanas -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-atarazanas">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1534080391025-a77af30d13b0?auto=format&fit=crop&w=800&q=80" 
+                                <img src="https://images.unsplash.com/photo-1543083477-4f785ae82753?auto=format&fit=crop&w=1200&q=80" 
                                      alt="Mercado de Atarazanas" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/DDA15E/ffffff?text=Mercado+de+Atarazanas'">
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80';">
                                 <span class="absolute top-4 left-4 bg-med-gold text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Matmarknad</span>
                             </div>
                             <div class="p-6">
                                 <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Mercado Central de Atarazanas</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Hjärtat av Málagas matkultur! Det är inrymt i ett gammalt marockanskt skeppsvarv från 1300-talet med otroliga färgglada glasmålningar. Gå runt bland lokal ost, skinka, fikon och slå er ner vid en av tapasbarerna i mitten för en rykande tallrik nystekt bläckfisk eller musslor. *Tips: Stängt på söndagar!*
+                                    Hjärtat av Málagas matkultur! Det är inrymt i ett gammalt marockanskt skeppsvarv från 1300-talet med otroliga färgglada glasmålningar. Gå runt bland lokal ost, skinka, fikon och slå er ner vid en av tapasbarerna i mitten för en tallrik nystekt bläckfisk eller musslor. *Tips: Stängt på söndagar!*
                                 </p>
                                 <div class="flex items-center justify-between border-t pt-4 border-gray-50">
                                     <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-gold mr-1"></i> Calle Atarazanas, 10</span>
@@ -783,16 +1016,16 @@
                         <!-- Pedregalejo -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-pedregalejo">
                             <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" 
+                                <img src="https://images.unsplash.com/photo-1560684352-8497838a2229?auto=format&fit=crop&w=1200&q=80" 
                                      alt="Pedregalejo Beach" 
                                      class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/DDA15E/ffffff?text=Pedregalejo+Strand'">
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80';">
                                 <span class="absolute top-4 left-4 bg-med-gold text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Seafood</span>
                             </div>
                             <div class="p-6">
                                 <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Pedregalejo - Strand & Espetos</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Det gamla fiskarkvarteret öster om centrum. Strandpromenaden är späckad med fantastiska små "Chiringuitos" (strandrestauranger). Det absolut viktigaste här är att beställa in *Espetos de Sardinas* – färska sardiner på träspett som sticks ner i sandfyllda gamla träbåtar och grillas långsamt över öppen eld. Otroligt idylliskt och billigt!
+                                    Det gamla fiskarkvarteret öster om centrum. Strandpromenaden är späckad med fantastiska små "Chiringuitos". Det absolut viktigaste här är att beställa in *Espetos de Sardinas* – färska sardiner på träspett som sticks ner i sandfyllda gamla träbåtar och grillas långsamt över öppen eld. Otroligt idylliskt och billigt!
                                 </p>
                                 <div class="flex items-center justify-between border-t pt-4 border-gray-50">
                                     <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-gold mr-1"></i> Pedregalejo strandpromenad</span>
@@ -810,7 +1043,7 @@
             <!-- Right Side: Sticky Map Container (5 Cols) -->
             <div class="lg:col-span-5 sticky top-24 z-30" id="karta">
                 <div class="bg-white rounded-3xl p-4 shadow-md border border-orange-50 overflow-hidden">
-                    <div class="flex items-center justify-between mb-3 px-1">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 px-1">
                         <div class="flex items-center space-x-2">
                             <span class="flex h-3.5 w-3.5 relative">
                               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-med-goldBright opacity-75"></span>
@@ -818,9 +1051,14 @@
                             </span>
                             <h3 class="font-serif text-lg font-bold text-med-darkOlive">Interaktiv Resekarta</h3>
                         </div>
-                        <button onclick="resetMapView()" class="text-[10px] font-bold text-med-terracotta bg-orange-50 hover:bg-orange-100 px-2.5 py-1.5 rounded-lg transition-all">
-                            <i class="fa-solid fa-arrows-spin mr-1"></i> Centrera om
-                        </button>
+                        <div class="flex items-center gap-1.5 self-end">
+                            <button onclick="exportToKML()" class="text-[10px] font-bold text-white bg-med-purple hover:bg-purple-800 px-2.5 py-1.5 rounded-lg transition-all flex items-center gap-1 shadow-sm">
+                                <i class="fa-solid fa-file-arrow-down"></i> Spara till Google Maps
+                            </button>
+                            <button onclick="resetMapView()" class="text-[10px] font-bold text-med-terracotta bg-orange-50 hover:bg-orange-100 px-2.5 py-1.5 rounded-lg transition-all">
+                                <i class="fa-solid fa-arrows-spin mr-0.5"></i> Centrera om
+                            </button>
+                        </div>
                     </div>
                     
                     <!-- Map Box -->
@@ -861,15 +1099,15 @@
                     <div class="flex items-start space-x-3.5">
                         <input type="checkbox" class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
                         <div>
-                            <p class="font-bold text-sm sm:text-base text-med-goldBright">Boka bad & massage på Hammam Al Ándalus till den 1 juli</p>
-                            <p class="text-xs text-gray-300">Ett underbart och stämningsfullt sätt att starta Susanns 50-årsdag på.</p>
+                            <p class="font-bold text-sm sm:text-base text-med-goldBright">Planera besöket på Jardín Botánico La Concepción (födelsedagen 1 juli)</p>
+                            <p class="text-xs text-gray-300">En fantastisk historisk palatsträdgård från 1800-talet – en oförglömlig start på Susanns 50-årsdag.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-3.5">
                         <input type="checkbox" checked class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
                         <div>
-                            <p class="font-bold text-sm sm:text-base text-green-400">Bekräfta upphämtningstid för Caminito del Rey (Lör 4 juli)</p>
-                            <p class="text-xs text-gray-300">Bokad och bekräftad! Kontakta leverantören Viator för exakt upphämtningstid på Avenida de Andalucía 10.</p>
+                            <p class="font-bold text-sm sm:text-base text-green-400">Bekräfta upphämtningstid för Caminito del Rey (Fre 3 juli)</p>
+                            <p class="text-xs text-gray-300">Bokad och bekräftad! Starttid på plats kl. 08:00. Kontakta Viator för exakt upphämtningstid på Avenida de Andalucía 10 (bör ske ca 06:30).</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-3.5">
@@ -886,6 +1124,59 @@
         </section>
 
     </main>
+
+    <!-- Google Maps Export Instructions Modal -->
+    <div id="exportModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl border border-purple-100 overflow-hidden transform scale-95 opacity-0 modal-transition" id="modalContainer">
+            <div class="bg-gradient-to-r from-med-purple to-purple-600 p-6 text-white relative">
+                <button onclick="closeExportModal()" class="absolute top-4 right-4 text-white/80 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="bg-white/20 p-2 rounded-xl">
+                        <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold">Importera till din Google Maps-app</h3>
+                </div>
+                <p class="text-purple-100 text-xs">Följ dessa enkla steg för att få alla 21 nålar direkt i mobilen permanent!</p>
+            </div>
+            <div class="p-6 space-y-4 text-sm text-gray-700">
+                <div class="flex gap-3">
+                    <div class="w-6 h-6 rounded-full bg-purple-100 text-med-purple flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
+                    <div>
+                        <p class="font-bold text-gray-900">KML-filen har sparats!</p>
+                        <p class="text-xs text-gray-500">Filen <b>Malaga_Susann_50.kml</b> laddas nu ner till din enhet automatiskt.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-6 h-6 rounded-full bg-purple-100 text-med-purple flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
+                    <div>
+                        <p class="font-bold text-gray-900">Öppna Google My Maps</p>
+                        <p class="text-xs text-gray-500">Gå till <a href="https://google.com/maps/d" target="_blank" class="text-med-purple font-bold hover:underline">google.com/maps/d <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> (Logga in på ditt Google-konto).</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-6 h-6 rounded-full bg-purple-100 text-med-purple flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</div>
+                    <div>
+                        <p class="font-bold text-gray-900">Skapa karta & Ladda upp</p>
+                        <p class="text-xs text-gray-500">Klicka på <b>"Skapa en ny karta"</b>, klicka på <b>"Importera"</b> i det tomma lagret och ladda upp KML-filen.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5"><i class="fa-solid fa-check text-[10px]"></i></div>
+                    <div>
+                        <p class="font-bold text-gray-900 text-green-800">Öppna i din vanliga mobil-app!</p>
+                        <p class="text-xs text-gray-600">Öppna din vanliga <b>Google Maps-app</b> på telefonen, gå till <b>"Sparat"</b> (eller "Sparade" i bottenmenyn) ➔ <b>"Kartor"</b>. Där ligger din nya Málaga-karta sparad med alla nålar dygnet runt!</p>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <button onclick="closeExportModal()" class="w-full bg-med-purple hover:bg-purple-800 text-white font-bold py-2.5 rounded-xl transition-all shadow-sm">
+                        Perfekt, jag fattar!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-med-dark py-12 text-center text-gray-400 text-xs border-t border-gray-800">
@@ -935,13 +1226,13 @@
             },
             // Birthday specific spots
             {
-                name: "Hammam Al Ándalus",
-                lat: 36.7226,
-                lng: -4.4221,
+                name: "Jardín Botánico Histórico La Concepción",
+                lat: 36.7592,
+                lng: -4.4312,
                 category: "birthday",
-                icon: "fa-spa",
+                icon: "fa-leaf",
                 color: "#E5A93C",
-                desc: "Lyxigt arabiskt bad – perfekt födelsedagsmorgon för Susann."
+                desc: "Ett fantastiskt, lummigt botaniskt paradis från 1855 med romantiskt palats och vattenfall – helt ljuvligt för Susanns födelsedagsmorgon!"
             },
             {
                 name: "AC Hotel Málaga Palacio (Rooftop Toast)",
@@ -961,7 +1252,7 @@
                 color: "#E5A93C",
                 desc: "En historisk vinkällare i gamla stan – perfekt för en festlig och stämningsfull tapas-middag."
             },
-            // Standard attractions
+            // Standard attractions & Friends tips
             {
                 name: "Alcazaba de Málaga",
                 lat: 36.7208,
@@ -969,7 +1260,16 @@
                 category: "kultur",
                 icon: "fa-gothic-arch",
                 color: "#D47A53",
-                desc: "Vackert moriskt palatsfort med trädgårdar."
+                desc: "Vackert moriskt palatsfort med trädgårdar, romersk teater och ett härligt café inuti."
+            },
+            {
+                name: "Castillo de Gibralfaro",
+                lat: 36.7230,
+                lng: -4.4111,
+                category: "kultur",
+                icon: "fa-fort-awesome",
+                color: "#D47A53",
+                desc: "Slott högt på berget. Fantastisk utsikt, men en mycket varm, brant stigning upp!"
             },
             {
                 name: "Catedral de Málaga",
@@ -978,7 +1278,7 @@
                 category: "kultur",
                 icon: "fa-church",
                 color: "#D47A53",
-                desc: "'La Manquita' - Málagas ståtliga katedral."
+                desc: "'La Manquita' - Málagas ståtliga katedral mitt i de bilfria, mysiga torgkvarteren."
             },
             {
                 name: "Caminito del Rey (Vandring)",
@@ -1005,7 +1305,7 @@
                 category: "shopping",
                 icon: "fa-bag-shopping",
                 color: "#1d4ed8",
-                desc: "Vacker paradgata för promenad & shopping."
+                desc: "Vacker paradgata med stora hängande tygstycken i luften för skugga."
             },
             {
                 name: "Soho Vintage & Second Hand",
@@ -1014,7 +1314,16 @@
                 category: "shopping",
                 icon: "fa-shirt",
                 color: "#1d4ed8",
-                desc: "Málagas trendiga hipster- och vintagekvarter."
+                desc: "Málagas trendiga kvarter med fantastisk street art, väggmålningar och hipsterkänsla."
+            },
+            {
+                name: "Muelle Uno (Hamnen)",
+                lat: 36.7163,
+                lng: -4.4145,
+                category: "shopping",
+                icon: "fa-anchor",
+                color: "#1d4ed8",
+                desc: "Fräscht och modernt hamnområde för fina kvällspromenader."
             },
             {
                 name: "Mercado Central de Atarazanas",
@@ -1026,6 +1335,15 @@
                 desc: "Lokal saluhall med färska råvaror & tapasbarer."
             },
             {
+                name: "Playa de la Malagueta",
+                lat: 36.7180,
+                lng: -4.4060,
+                category: "mat",
+                icon: "fa-umbrella-beach",
+                color: "#DDA15E",
+                desc: "Stadsstranden, finast på mitten. Boka bord i god tid för strandluncher!"
+            },
+            {
                 name: "Pedregalejo (Espetos)",
                 lat: 36.7214,
                 lng: -4.3752,
@@ -1033,6 +1351,43 @@
                 icon: "fa-fish",
                 color: "#DDA15E",
                 desc: "Ät de berömda strandgrillade sardinspetten här!"
+            },
+            // New Villages and Car Rental Info
+            {
+                name: "Mijas Pueblo",
+                lat: 36.6000,
+                lng: -4.6300,
+                category: "byar",
+                icon: "fa-mountain-city",
+                color: "#7c3aed",
+                desc: "Söt vit bergsby med fantastisk utsikt över kusten och söta gränder."
+            },
+            {
+                name: "Frigiliana",
+                lat: 36.7875,
+                lng: -3.8944,
+                category: "byar",
+                icon: "fa-seedling",
+                color: "#7c3aed",
+                desc: "Andalusiens kanske vackraste vita by, känd för sina krukor och blå dörrar."
+            },
+            {
+                name: "Nerja",
+                lat: 36.7880,
+                lng: -3.8383,
+                category: "byar",
+                icon: "fa-water",
+                color: "#7c3aed",
+                desc: "Kuststad med de kända klippstränderna och utsiktsplatsen Balcón de Europa."
+            },
+            {
+                name: "Málaga María Zambrano Station (Hyrbilsnav)",
+                lat: 36.7121,
+                lng: -4.4318,
+                category: "byar",
+                icon: "fa-key",
+                color: "#7c3aed",
+                desc: "Bästa stället att hämta hyrbil nära boendet (~2 km, 5 min taxi)."
             }
         ];
 
@@ -1053,7 +1408,7 @@
             // Add pins to map
             renderPins();
             
-            // Set default view to 'itinerary' (Reseplan) on load to showcase the new content
+            // Set default view to 'itinerary' (Reseplan) on load to showcase the content
             filterCategory('itinerary');
         }
 
@@ -1075,14 +1430,22 @@
                     popupAnchor: [0, -32]
                 });
 
+                // Generate Google Maps Deep Link
+                const googleMapsDeepLink = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
+
                 const marker = L.marker([loc.lat, loc.lng], { icon: customIcon })
                     .bindPopup(`
-                        <div class="p-2">
+                        <div class="p-2 min-w-[200px]">
                             <h4 class="font-serif font-bold text-sm text-med-darkOlive mb-1">${loc.name}</h4>
-                            <p class="text-xs text-gray-500 mb-2">${loc.desc}</p>
-                            <span class="inline-block text-[9px] font-bold uppercase tracking-wider text-white px-2 py-0.5 rounded" style="background-color: ${loc.color};">
-                                ${loc.category}
-                            </span>
+                            <p class="text-xs text-gray-500 mb-2.5">${loc.desc}</p>
+                            <div class="flex items-center justify-between gap-2 border-t border-gray-100 pt-2">
+                                <span class="inline-block text-[9px] font-bold uppercase tracking-wider text-white px-2 py-0.5 rounded" style="background-color: ${loc.color};">
+                                    ${loc.category}
+                                </span>
+                                <a href="${googleMapsDeepLink}" target="_blank" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-[10px] font-semibold px-2 py-1 rounded-md transition-all flex items-center gap-1.5">
+                                    <i class="fa-solid fa-map-location-dot"></i> Öppna i Maps
+                                </a>
+                            </div>
                         </div>
                     `)
                     .addTo(map);
@@ -1125,7 +1488,7 @@
             // Toggle active styles on buttons
             const buttons = document.querySelectorAll('.cat-btn');
             buttons.forEach(btn => {
-                btn.classList.remove('bg-med-terracotta', 'text-white', 'shadow-md', 'bg-gradient-to-r', 'from-med-goldBright', 'to-med-terracotta', 'bg-teal-700', 'bg-med-teal', 'bg-amber-700');
+                btn.classList.remove('bg-med-terracotta', 'text-white', 'shadow-md', 'bg-gradient-to-r', 'from-med-goldBright', 'to-med-terracotta', 'bg-teal-700', 'bg-med-teal', 'bg-amber-700', 'bg-med-purple');
                 btn.classList.add('bg-white', 'text-gray-600', 'border-gray-100');
             });
 
@@ -1138,6 +1501,8 @@
                     activeBtn.classList.add('bg-med-teal', 'text-white', 'shadow-md');
                 } else if (category === 'itinerary') {
                     activeBtn.classList.add('bg-amber-700', 'text-white', 'shadow-md');
+                } else if (category === 'byar') {
+                    activeBtn.classList.add('bg-med-purple', 'text-white', 'shadow-md');
                 } else {
                     activeBtn.classList.add('bg-med-terracotta', 'text-white', 'shadow-md');
                 }
@@ -1162,14 +1527,17 @@
                 // Zoom out slightly to encompass Caminito del Rey and Montes de Málaga
                 map.setView([36.8250, -4.5800], 10);
             } else if (category === 'birthday') {
-                // Focus deeply on old town where all the proposed birthday events now take place
-                map.setView([36.7210, -4.4200], 15.5);
+                // Focus out slightly to encompass both city center and the Botanical Garden just north
+                map.setView([36.7380, -4.4250], 12.5);
             } else if (category === 'reseinfo') {
                 // Focus tightly on apartment location
                 map.setView([36.7241, -4.4214], 16.5);
             } else if (category === 'itinerary') {
                 // Zoom out to cover Airport to old town to highlight transit scale
                 map.setView([36.7000, -4.4500], 12);
+            } else if (category === 'byar') {
+                // Zoom out to cover Mijas (west) and Nerja/Frigiliana (east)
+                map.setView([36.7100, -4.2000], 9.5);
             } else if (category === 'mat') {
                 // Focus nicely between central and eastern beachfront Pedregalejo
                 map.setView([36.7200, -4.4000], 13);
@@ -1179,6 +1547,79 @@
                 // Standard city center focus
                 map.setView([36.7200, -4.4180], 14.5);
             }
+        }
+
+        // Helper to safely format strings for XML compilation
+        function escapeXml(unsafe) {
+            return unsafe.replace(/[<>&'"]/g, function (c) {
+                switch (c) {
+                    case '<': return '&lt;';
+                    case '>': return '&gt;';
+                    case '&': return '&amp;';
+                    case '\'': return '&apos;';
+                    case '"': return '&quot;';
+                }
+            });
+        }
+
+        // Compile all pins into a valid KML file for Google My Maps import
+        function exportToKML() {
+            let kml = `<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Malaga for Susann 50 ar</name>
+    <description>Inspirationslista och reseguide till Malaga för Susanns 50-årsfirande</description>`;
+            
+            locations.forEach(loc => {
+                kml += `
+    <Placemark>
+      <name>${escapeXml(loc.name)}</name>
+      <description>${escapeXml(loc.desc)} (Kategori: ${loc.category})</description>
+      <Point>
+        <coordinates>${loc.lng},${loc.lat},0</coordinates>
+      </Point>
+    </Placemark>`;
+            });
+            
+            kml += `
+  </Document>
+</kml>`;
+            
+            // Build and trigger file download automatically
+            const blob = new Blob([kml], { type: 'application/vnd.google-earth.kml+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Malaga_Susann_50.kml';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Open instructions modal
+            openExportModal();
+        }
+
+        // Open the export instructions modal
+        function openExportModal() {
+            const modal = document.getElementById('exportModal');
+            const container = document.getElementById('modalContainer');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                container.classList.remove('scale-95', 'opacity-0');
+                container.classList.add('scale-100', 'opacity-100');
+            }, 50);
+        }
+
+        // Close the export instructions modal
+        function closeExportModal() {
+            const modal = document.getElementById('exportModal');
+            const container = document.getElementById('modalContainer');
+            container.classList.remove('scale-100', 'opacity-100');
+            container.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 250);
         }
     </script>
 </body>
