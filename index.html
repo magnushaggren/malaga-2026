@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Susann 50 år - Málaga Reseinspiration</title>
+    <title>Susann 50 år - Málaga Reseinspiration & Reseplan</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts (Playfair Display & Inter) -->
@@ -32,7 +32,8 @@
                             gold: '#DDA15E',
                             goldBright: '#E5A93C',
                             dark: '#1F2415',
-                            teal: '#0f766e'
+                            teal: '#0f766e',
+                            purple: '#7c3aed'
                         }
                     }
                 }
@@ -93,7 +94,7 @@
                 </div>
                 <div>
                     <h1 class="font-serif text-xl sm:text-2xl font-bold text-med-darkOlive tracking-tight">Málaga för Susann</h1>
-                    <p class="text-[10px] sm:text-xs font-semibold tracking-wider text-med-goldBright uppercase">Födelsedagsresa • 28 Juni – 6 Juli</p>
+                    <p class="text-[10px] sm:text-xs font-semibold tracking-wider text-med-goldBright uppercase">Familjeresa • 28 Juni – 6 Juli 2026</p>
                 </div>
             </div>
             <div class="flex items-center space-x-2 sm:space-x-4">
@@ -115,37 +116,41 @@
                     👑 Födelsedagsäventyr i Andalusien
                 </span>
                 <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-med-darkOlive leading-tight mb-6">
-                    Grattis på 50-årsdagen, Susann!
+                    Málaga-guiden till Susanns 50-årsresa!
                 </h2>
                 <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
-                    Välkomna till er personliga födelsedagsguide till Málaga. Den <span class="font-semibold text-med-terracotta">1 juli</span> fyller Susann 50 år under den andalusiska solen – en milstolpe som förtjänar att firas med det allra bästa. Vi har samlat reseinformation, boende, vandringstips, vintage-shopping, fantastisk mat och oförglömliga äventyr för er vecka!
+                    Välkomna <b>Magnus, Susann och Josefin</b> till er skräddarsydda digitala guide för er vecka i Andalusien! Den <span class="font-semibold text-med-terracotta">1 juli</span> firar vi Susanns 50-årsdag under palmers sus. Vi har nu även integrerat era flygtider, ert vackra boende på <b>Mariblanca 17</b>, er inbokade dagstur till <b>Caminito del Rey</b> samt en smidig reseplan för hela vistelsen!
                 </p>
                 
                 <!-- Quick Stats / Highlights of the Birthday Trip -->
-                <div class="grid grid-cols-2 sm:grid-cols-6 gap-3 max-w-4xl mx-auto">
-                    <div onclick="filterCategory('reseinfo')" class="cursor-pointer hover:scale-105 transition-transform bg-teal-50 border border-teal-100 p-3 rounded-2xl shadow-sm text-center">
-                        <span class="block text-xl mb-1">✈️</span>
-                        <span class="block text-[11px] font-bold text-teal-800">Boende & Flyg</span>
+                <div class="grid grid-cols-2 sm:grid-cols-7 gap-2 max-w-5xl mx-auto">
+                    <div onclick="filterCategory('itinerary')" class="cursor-pointer hover:scale-105 transition-transform bg-amber-50 border border-amber-200 p-2.5 rounded-2xl shadow-sm text-center">
+                        <span class="block text-lg mb-0.5">🗓️</span>
+                        <span class="block text-[10px] font-extrabold text-amber-800">Reseplan & Info</span>
                     </div>
-                    <div onclick="filterCategory('birthday')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-xl mb-1">✨</span>
-                        <span class="block text-[11px] font-bold text-med-darkOlive">Firande 1 Juli</span>
+                    <div onclick="filterCategory('reseinfo')" class="cursor-pointer hover:scale-105 transition-transform bg-teal-50 border border-teal-100 p-2.5 rounded-2xl shadow-sm text-center">
+                        <span class="block text-lg mb-0.5">✈️</span>
+                        <span class="block text-[10px] font-bold text-teal-800">Boende & Flyg</span>
                     </div>
-                    <div onclick="filterCategory('vandring')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-xl mb-1">🥾</span>
-                        <span class="block text-[11px] font-bold text-med-darkOlive">Natur & Berg</span>
+                    <div onclick="filterCategory('birthday')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-lg mb-0.5">👑</span>
+                        <span class="block text-[10px] font-bold text-med-darkOlive">1 Juli: 50 år!</span>
                     </div>
-                    <div onclick="filterCategory('kultur')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-xl mb-1">🏛️</span>
-                        <span class="block text-[11px] font-bold text-med-darkOlive">Kultur & Design</span>
+                    <div onclick="filterCategory('vandring')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-lg mb-0.5">🥾</span>
+                        <span class="block text-[10px] font-bold text-med-darkOlive">Natur & Berg</span>
                     </div>
-                    <div onclick="filterCategory('shopping')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-xl mb-1">🛍️</span>
-                        <span class="block text-[11px] font-bold text-med-darkOlive">Second Hand</span>
+                    <div onclick="filterCategory('kultur')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-lg mb-0.5">🏛️</span>
+                        <span class="block text-[10px] font-bold text-med-darkOlive">Kultur & Design</span>
                     </div>
-                    <div onclick="filterCategory('mat')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-3 rounded-2xl shadow-sm border border-orange-50 text-center">
-                        <span class="block text-xl mb-1">🥂</span>
-                        <span class="block text-[11px] font-bold text-med-darkOlive">God Mat & Vin</span>
+                    <div onclick="filterCategory('shopping')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-lg mb-0.5">🛍️</span>
+                        <span class="block text-[10px] font-bold text-med-darkOlive">Second Hand</span>
+                    </div>
+                    <div onclick="filterCategory('mat')" class="cursor-pointer hover:scale-105 transition-transform bg-white p-2.5 rounded-2xl shadow-sm border border-orange-50 text-center">
+                        <span class="block text-lg mb-0.5">🥂</span>
+                        <span class="block text-[10px] font-bold text-med-darkOlive">God Mat & Vin</span>
                     </div>
                 </div>
             </div>
@@ -162,6 +167,9 @@
         <div class="flex flex-wrap gap-2 mb-8 justify-center items-center" id="filters">
             <button onclick="filterCategory('all')" id="btn-all" class="cat-btn bg-med-terracotta text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all duration-300">
                 <i class="fa-solid fa-layer-group mr-1.5"></i> Visa allt
+            </button>
+            <button onclick="filterCategory('itinerary')" id="btn-itinerary" class="cat-btn bg-white hover:bg-amber-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm border border-amber-200 transition-all duration-300">
+                <i class="fa-solid fa-calendar-days text-amber-600 mr-1.5"></i> 🗓️ Reseplan & Transport
             </button>
             <button onclick="filterCategory('reseinfo')" id="btn-reseinfo" class="cat-btn bg-white hover:bg-teal-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm border border-teal-100 transition-all duration-300">
                 <i class="fa-solid fa-plane-departure text-med-teal mr-1.5"></i> ✈️ Reseinfo & Boende
@@ -181,9 +189,6 @@
             <button onclick="filterCategory('mat')" id="btn-mat" class="cat-btn bg-white hover:bg-orange-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm border border-gray-100 transition-all duration-300">
                 <i class="fa-solid fa-utensils text-med-gold mr-1.5"></i> God Mat
             </button>
-            <button onclick="filterCategory('event')" id="btn-event" class="cat-btn bg-white hover:bg-orange-50 text-gray-600 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-sm border border-gray-100 transition-all duration-300">
-                <i class="fa-solid fa-calendar-star text-purple-600 mr-1.5"></i> Events (28 juni - 5 juli)
-            </button>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -191,7 +196,247 @@
             <!-- Left Side: Cards and Info List (7 Cols) -->
             <div class="lg:col-span-7 space-y-8" id="cards-container">
 
-                <!-- NEW CATEGORY: Flight & Accommodation Block -->
+                <!-- NEW CATEGORY: Detailed Itinerary and Airport Transport Guide -->
+                <div class="category-block" data-category="itinerary">
+                    <h3 class="font-serif text-2xl font-bold text-amber-800 mb-4 border-b pb-2 border-amber-200 flex items-center">
+                        <span class="mr-2">🗓️</span> Detaljerad Reseplan & Transporter
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        
+                        <!-- Airport Transit Guide Card -->
+                        <div class="bg-gradient-to-r from-amber-50/50 to-white rounded-3xl p-6 border border-amber-100 shadow-sm card-item" id="card-airport-transit-guide">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="bg-amber-600 text-white p-2 rounded-xl">
+                                    <i class="fa-solid fa-bus-simple text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-xl font-bold text-med-darkOlive">Guide: Resa till & från flygplatsen</h4>
+                                    <p class="text-xs text-gray-500">Hur ni enklast tar er mellan flygplatsen och Mariblanca 17</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4 text-sm text-gray-700">
+                                <div class="border-l-4 border-teal-600 pl-4 py-1">
+                                    <h5 class="font-bold text-teal-800 flex items-center gap-1">
+                                        <i class="fa-solid fa-plane-arrival"></i> Vid ankomst (Sön 28 juni kl. 14:30)
+                                    </h5>
+                                    <p class="mt-1 leading-relaxed">
+                                        Efter landning och väskhämtning har ni tre utmärkta alternativ till ert boende mitt i gamla stan:
+                                    </p>
+                                    <ul class="list-disc pl-4 mt-2 space-y-1 text-xs">
+                                        <li><b>Taxi (Bästa alternativet för 3 pers):</b> Stå i taxikön direkt utanför ankomstterminalen. Tar ca 15–20 minuter direkt till dörren. Kostnad ca <b>€20–€25</b>.</li>
+                                        <li><b>Uber / Cabify / Bolt:</b> Beställs via appen. Hämta upp sker på den dedikerade samåkningsterminalen precis utanför. Samma pris som vanlig taxi.</li>
+                                        <li><b>Tåg (Cercanías C1):</b> Gå till tågstationen på flygplatsen. Ta tåget till slutstationen <b>Málaga Centro Alameda</b> (tar 12 minuter, kostar ca €1.80/person, tåg går var 20:e minut). Därifrån har ni en vacker promenad på ca 15 minuter (1.2 km) till lägenheten.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="border-l-4 border-red-500 pl-4 py-1 bg-red-50/30 rounded-r-xl pr-2">
+                                    <h5 class="font-bold text-red-800 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> Vid hemresa (Mån 6 juli - Flyg kl. 07:10)
+                                    </h5>
+                                    <p class="mt-1 font-semibold text-gray-900">Rekommenderad ankomsttid på flygplatsen: Senast kl. 05:10</p>
+                                    <p class="mt-1 leading-relaxed text-xs text-gray-600">
+                                        Eftersom ni flyger tidigt på morgonen är det extremt viktigt att välja rätt transportmedel för att slippa stress:
+                                    </p>
+                                    <div class="mt-3 space-y-2 text-xs">
+                                        <div class="bg-green-50 p-2.5 rounded-lg border border-green-100 flex items-start gap-2">
+                                            <i class="fa-solid fa-circle-check text-green-600 mt-0.5"></i>
+                                            <div>
+                                                <p class="font-bold text-green-800">REKOMMENDERAS: Förbeställd Taxi / Cabify / Uber (Säkrast!)</p>
+                                                <p class="text-gray-600 mt-0.5">
+                                                    Beställ resa kvällen innan till <b>kl. 04:45</b>. Taxibilar kör dygnet runt i staden och tar er direkt till terminalen på 15 minuter. Priset är ca <b>€25–€30</b> (nattaxa tillämpas). Det ger er maximal sömn och noll stress.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200 flex items-start gap-2">
+                                            <i class="fa-solid fa-circle-info text-amber-600 mt-0.5"></i>
+                                            <div>
+                                                <p class="font-bold text-amber-800">ALTERNATIV: Första Tåget (Cercanías C1)</p>
+                                                <p class="text-gray-600 mt-0.5">
+                                                    Det absolut första tåget från stationen <i>Málaga Centro Alameda</i> avgår kl. <b>05:20 AM</b> och anländer till flygplatsen kl. <b>05:32 AM</b>. 
+                                                    <br><span class="text-red-700 font-semibold">Varning:</span> Ni kommer till flygplatsen ca 1 timme och 38 minuter före avgång. Om ni har incheckat bagage kan detta vara i tätaste laget eftersom bagageinlämningen stänger tidigt. Rekommenderas endast om ni reser med enbart handbagage och redan har checkat in i appen!
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-red-50 p-2.5 rounded-lg border border-red-200 flex items-start gap-2">
+                                            <i class="fa-solid fa-circle-xmark text-red-600 mt-0.5"></i>
+                                            <div>
+                                                <p class="font-bold text-red-800">UNDVIK: Flygbussen (Linje A)</p>
+                                                <p class="text-gray-600 mt-0.5">
+                                                    Den första flygbussen (Line A) avgår från centrum först kl. <b>06:25 AM</b>, vilket är alldeles för sent för ert flyg. Undvik denna på hemresan!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Caminito del Rey Tour Booking Card -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-amber-200 hover:shadow-md transition-all duration-300 card-item" id="card-caminito-booking-details">
+                            <div class="relative bg-gradient-to-r from-med-olive to-med-darkOlive p-6 text-white">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Inbokad Dagstur</span>
+                                    <span class="text-xs bg-amber-500/80 text-white px-2 py-0.5 rounded font-bold"><i class="fa-solid fa-circle-check"></i> Bekräftad</span>
+                                </div>
+                                <h4 class="font-serif text-2xl font-bold">Caminito del Rey – Guidad dagsutflykt</h4>
+                                <p class="text-emerald-100 text-sm mt-1">Bokad via Booking.com & Viator</p>
+                            </div>
+                            
+                            <div class="p-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-700 mb-4 bg-amber-50/50 p-4 rounded-2xl border border-amber-100">
+                                    <div>
+                                        <p class="font-bold text-med-darkOlive uppercase tracking-wider mb-1"><i class="fa-solid fa-users text-med-terracotta mr-1"></i> Resenärer</p>
+                                        <p class="font-semibold text-gray-900 text-sm">Magnus, Susann (50 år!) & Josefin</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-med-darkOlive uppercase tracking-wider mb-1"><i class="fa-solid fa-language text-med-terracotta mr-1"></i> Guidat språk</p>
+                                        <p class="font-semibold text-gray-900 text-sm">Engelska - Guide</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4 text-sm text-gray-600">
+                                    <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                                        <p class="font-bold text-med-darkOlive flex items-center gap-1.5 text-sm mb-1.5">
+                                            <i class="fa-solid fa-map-location-dot text-med-terracotta"></i> Upphämtningsplats (Málaga Centro)
+                                        </p>
+                                        <p class="font-semibold text-gray-900">Av. de Andalucía, 10, Málaga, 29007</p>
+                                        <p class="text-xs text-gray-500 mt-1 leading-relaxed">
+                                            Busshållplats mellan Unicaja Banco och Caixa Bank vid Avenida de Andalucía 10, i riktning mot flygplatsen. Det tar cirka <b>15–18 minuters promenad (ca 1.3 km)</b> från er lägenhet på Mariblanca 17.
+                                        </p>
+                                        <div class="mt-3 flex gap-2">
+                                            <button onclick="focusOnLocation(36.7176, -4.4283, 'Upphämtningsplats: Caminito del Rey', 17)" class="bg-med-terracotta hover:bg-med-terracotta/90 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-all flex items-center gap-1 shadow-sm">
+                                                <i class="fa-solid fa-location-crosshairs"></i> Visa på kartan
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-red-50/40 p-4 rounded-xl border border-red-100">
+                                        <p class="font-bold text-red-800 flex items-center gap-1.5 text-xs uppercase tracking-wider mb-2">
+                                            <i class="fa-solid fa-circle-exclamation text-amber-500"></i> Viktig information & Regler
+                                        </p>
+                                        <ul class="list-disc pl-4 text-xs space-y-1.5 text-gray-700">
+                                            <li><span class="font-semibold text-gray-900">Viktigt angående tid:</span> Tiden på er voucher är ankomsttiden till själva Caminito del Rey, <span class="font-bold text-red-700">inte upphämtningstiden</span>. Ni måste kontakta den lokala leverantören (Viator) för att bekräfta exakt upphämtningstid i förväg!</li>
+                                            <li><span class="font-semibold text-gray-900">Utrustning:</span> Endast bekväma, stabila skor (t.ex. gympaskor eller vandringsskor). <span class="text-red-700 font-semibold">Inga promenadkäppar eller paraplyer är tillåtna på grund av säkerhetsskäl!</span></li>
+                                            <li><span class="font-semibold text-gray-900">Åldersgräns:</span> Barn måste vara minst 8 år gamla för att få vandra.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day-by-Day Outline -->
+                        <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm card-item" id="card-day-by-day">
+                            <h4 class="font-serif text-xl font-bold text-med-darkOlive mb-4">Förslag på dagsplanering för veckan</h4>
+                            
+                            <div class="space-y-4">
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-xs">28</div>
+                                        <div class="w-0.5 bg-gray-200 flex-1"></div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <p class="text-xs font-bold text-teal-800">SÖNDAG 28 JUNI - ANKOMST</p>
+                                        <p class="text-xs text-gray-600 mt-1">Landning kl. 14:30. Incheckning på Mariblanca 17. Ta det lugnt och promenera i närområdet. På kvällen: Gratis utomhuskonsert med symfoniorkestern i Paseo del Parque!</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-med-terracotta text-white flex items-center justify-center font-bold text-xs">29</div>
+                                        <div class="w-0.5 bg-gray-200 flex-1"></div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <p class="text-xs font-bold text-med-terracotta">MÅNDAG 29 JUNI - KULTUR & HISTORIA</p>
+                                        <p class="text-xs text-gray-600 mt-1">Utforska underbara Alcazaba och den intilliggande Romerska teatern på förmiddagen innan det blir för varmt. Luncha gott på Mercado de Atarazanas.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-med-terracotta text-white flex items-center justify-center font-bold text-xs">30</div>
+                                        <div class="w-0.5 bg-gray-200 flex-1"></div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <p class="text-xs font-bold text-med-terracotta">TISDAG 30 JUNI - SHOPPING & STRAND</p>
+                                        <p class="text-xs text-gray-600 mt-1">Shoppingdag! Strosa längs marmorklädda Calle Larios, leta efter vintagefynd i Soho, och njut av härligt strandliv under eftermiddagen.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-med-goldBright to-med-terracotta text-white flex items-center justify-center font-bold text-xs animate-pulse">01</div>
+                                        <div class="w-0.5 bg-gray-200 flex-1"></div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <p class="text-xs font-bold text-med-goldBright">ONSDAG 1 JULI - SUSANNS 50-ÅRSDAG! 👑</p>
+                                        <p class="text-xs text-gray-600 mt-1">Födelsedagslyx! Moriska bad (Hammam) på förmiddagen, solnedgångsskål med 360-utsikt på AC Malaga Palacio, och en helt underbar och folklig tapaskväll i gamla stan.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-med-olive text-white flex items-center justify-center font-bold text-xs">02</div>
+                                        <div class="w-0.5 bg-gray-200 flex-1"></div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <p class="text-xs font-bold text-med-olive">TORSDAG 2 JULI - FRILUFT & ESPETOS</p>
+                                        <p class="text-xs text-gray-600 mt-1">Börja ladda upp inför helgens stora vandring. Kanske en dagsutflykt till de tallskogsbeklädda bergen Montes de Málaga eller cykling bort till strandpromenaden i Pedregalejo för att äta grillade sardinspett?</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-med-terracotta text-white flex items-center justify-center font-bold text-xs">03</div>
+                                        <div class="w-0.5 bg-gray-200 flex-1"></div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <p class="text-xs font-bold text-med-terracotta">FREDAG 3 JULI - MÁLAGAS TAK</p>
+                                        <p class="text-xs text-gray-600 mt-1">Besök katedralen och boka in den spännande takvandringen på katedralens kupol. Sista-minuten shopping inför reorna (Rebajas)!</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-med-olive text-white flex items-center justify-center font-bold text-xs">04</div>
+                                        <div class="w-0.5 bg-gray-200 flex-1"></div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <p class="text-xs font-bold text-med-olive">LÖRDAG 4 JULI - UTFLYKTSDAGEN (CAMINITO DEL REY) 🥾</p>
+                                        <p class="text-xs text-gray-600 mt-1">Dags för ert livs mest spektakulära vandring! Samling på Avenida de Andalucía 10 för er guidade dagsutflykt till El Chorro och Caminito del Rey. På kvällen: Livekonsert med Lia Kali på anrika Plaza de Toros!</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-med-terracotta to-med-goldBright text-white flex items-center justify-center font-bold text-xs animate-pulse">05</div>
+                                        <div class="w-0.5 bg-gray-200 flex-1"></div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <p class="text-xs font-bold text-med-terracotta">SÖNDAG 5 JULI - JONATHAN ANLÄNDER & MIDDAGSMYS 🍕</p>
+                                        <p class="text-xs text-gray-600 mt-1">Rolig familjeträff! Sonen Jonathan kommer till Málaga med sina kompisar idag. Under eftermiddagen eller kvällen möter ni upp hela gänget för en riktigt trevlig och livfull middag tillsammans. Perfekt tillfälle att fira er sista kväll i Andalusien och höra om deras planer!</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs">06</div>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-red-700">MÅNDAG 6 JULI - HEMRESA ✈️</p>
+                                        <p class="text-xs text-gray-600 mt-1">Tidig morgon! Åk med förbeställd taxi till flygplatsen kl. 04:45 för att vara framme till rekommenderad tid kl. 05:10. Flyget lyfter kl. 07:10 mot Göteborg.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Flight & Accommodation Block -->
                 <div class="category-block" data-category="reseinfo">
                     <h3 class="font-serif text-2xl font-bold text-med-teal mb-4 border-b pb-2 border-teal-100 flex items-center">
                         <span class="mr-2">✈️</span> Praktisk Reseinfo & Boende
@@ -396,29 +641,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Teatro Romano -->
-                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-teatro">
-                            <div class="relative h-52 sm:h-64">
-                                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" 
-                                     alt="Teatro Romano" 
-                                     class="w-full h-full object-cover" 
-                                     onerror="this.src='https://placehold.co/600x400/D47A53/ffffff?text=Teatro+Romano'">
-                                <span class="absolute top-4 left-4 bg-med-darkOlive text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Kultur</span>
-                            </div>
-                            <div class="p-6">
-                                <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Romerska teatern (Teatro Romano)</h4>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Ligger vid foten av Alcazaba och upptäcktes av en slump 1951. Det är otroligt häftigt att sitta på trapporna i den intilliggande gågatan med en glass och titta på dessa 2000 år gamla ruiner där det än idag ibland hålls föreställningar.
-                                </p>
-                                <div class="flex items-center justify-between border-t pt-4 border-gray-50">
-                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-map-pin text-med-terracotta mr-1"></i> Calle Alcazabilla, 8</span>
-                                    <button onclick="focusOnLocation(36.7211, -4.4173, 'Romerska Teatern')" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
-                                        Visa på kartan <i class="fa-solid fa-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -428,7 +650,7 @@
                         <span class="mr-2">🥾</span> Vandring & Natur
                     </h3>
                     <div class="space-y-6">
-                        <!-- Caminito del Rey -->
+                        <!-- Caminito del Rey Info Card -->
                         <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-orange-50 hover:shadow-md transition-shadow duration-300 card-item" id="card-caminito">
                             <div class="relative h-52 sm:h-64">
                                 <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" 
@@ -439,16 +661,16 @@
                             </div>
                             <div class="p-6">
                                 <div class="flex justify-between items-start mb-2">
-                                    <h4 class="font-serif text-xl font-bold text-med-dark">Caminito del Rey</h4>
-                                    <span class="bg-red-50 text-red-600 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wide border border-red-100">Boka snarast!</span>
+                                    <h4 class="font-serif text-xl font-bold text-med-dark">Caminito del Rey Vandringsinformation</h4>
+                                    <span class="bg-green-50 text-green-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wide border border-green-100">BOKAD LÖR 4 JULI!</span>
                                 </div>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                    En fullkomligt magnifik, hisnande dagsutflykt. Vandringen går längs smala gångbroar fastbultade i klipporna över hundra meter upp i klyftan El Chorro. Biljetter måste bokas veckor (ibland månader) i förväg på grund av strikta säkerhetsregler. Tåget från Málaga tar ca 45 minuter.
+                                    En fullkomligt magnifik, hisnande dagsutflykt. Vandringen går längs smala gångbroar fastbultade i klipporna över hundra meter upp i klyftan El Chorro. Biljetter är nu bokade för er (Svenska & engelska guider). Ni åker bekvämt i ett luftkonditionerat fordon med upphämtning i Málaga city.
                                 </p>
                                 <div class="flex items-center justify-between border-t pt-4 border-gray-50">
-                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-train text-med-olive mr-1"></i> Utflykt - El Chorro-ravinen</span>
-                                    <button onclick="focusOnLocation(36.9157, -4.7695, 'Caminito del Rey', 11)" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
-                                        Visa på kartan <i class="fa-solid fa-arrow-right"></i>
+                                    <span class="text-xs text-gray-500"><i class="fa-solid fa-bus text-med-olive mr-1"></i> Upphämtning: Av. de Andalucía 10</span>
+                                    <button onclick="focusOnLocation(36.7176, -4.4283, 'Upphämtningsplats: Caminito del Rey', 17)" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
+                                        Visa upphämtning på kartan <i class="fa-solid fa-arrow-right"></i>
                                     </button>
                                 </div>
                             </div>
@@ -583,84 +805,6 @@
                     </div>
                 </div>
 
-                <!-- Events & Calendar section -->
-                <div class="category-block" data-category="event">
-                    <h3 class="font-serif text-2xl font-bold text-purple-700 mb-4 border-b pb-2 border-purple-100 flex items-center">
-                        <span class="mr-2">📅</span> Semesterkalender & Event (28 jun – 6 jul)
-                    </h3>
-                    <div class="space-y-6">
-                        <!-- Söndag 28 Juni -->
-                        <div class="bg-gradient-to-r from-purple-50 to-white rounded-3xl p-6 border border-purple-100 shadow-sm relative overflow-hidden card-item" id="card-event-ocon">
-                            <div class="absolute -right-8 -bottom-8 text-purple-100/40 text-8xl font-bold select-none font-serif">28</div>
-                            <span class="bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Söndag 28 Juni</span>
-                            <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Ankomst & Symfonisk utomhuskonsert</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                Välkomna till Málaga! Efter att ha landat kl. 14:30 och installerat er i er fina lägenhet på Mariblanca 17, kan ni starta semesterveckan under bar himmel! Málagas symfoniorkester bjuder in till en helt gratis utomhuskonsert i parken lummiga "Paseo del Parque" (Auditorio Eduardo Ocón). Otroligt mysig spansk folkstämning i den svala kvällsluften.
-                            </p>
-                            <div class="flex items-center justify-between border-t pt-4 border-purple-100">
-                                <span class="text-xs text-purple-700 font-semibold"><i class="fa-solid fa-clock mr-1"></i> Kvällstid</span>
-                                <button onclick="focusOnLocation(36.7195, -4.4140, 'Auditorio Eduardo Ocón (Symfoni)')" class="text-xs font-bold text-purple-700 hover:underline flex items-center gap-1">
-                                    Visa scenen på kartan <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Onsdag 1 Juli: FÖDELSEDAGEN -->
-                        <div class="bg-gradient-to-r from-amber-50 to-white rounded-3xl p-6 border border-amber-200 shadow-sm relative overflow-hidden card-item birthday-card" id="card-event-birthday-timeline">
-                            <div class="absolute -right-8 -bottom-8 text-amber-100/40 text-8xl font-bold select-none font-serif">1</div>
-                            <span class="bg-gradient-to-r from-med-goldBright to-med-terracotta text-white text-[10px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">👑 Onsdag 1 Juli – Susanns 50-årsdag! 🥂</span>
-                            <h4 class="font-serif text-2xl font-bold text-med-darkOlive mb-2">En dag fylld av härliga förslag</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                Idag är det Susanns alldeles speciella dag! Rekommenderat flexibelt upplägg: Börja med sköna, svalkande <span class="font-semibold text-med-dark">moriska bad (Hammam)</span> på förmiddagen, spana in shoppingen eller ta en siesta på stranden under eftermiddagen. Framåt skymningen tar ni en <span class="font-semibold text-med-dark">solnedgångsskål</span> på 15:e våningen och avslutar med en helt fantastisk och livlig <span class="font-semibold text-med-dark">tapasrunda</span> i gamla stans gränder där ni bestämmer restaurang helt på plats!
-                            </p>
-                            <div class="flex items-center justify-between border-t pt-4 border-amber-100">
-                                <span class="text-xs text-med-goldBright font-bold"><i class="fa-solid fa-champagne-glasses mr-1"></i> En oförglömlig dag i Málaga</span>
-                                <button onclick="filterCategory('birthday')" class="text-xs font-bold text-med-terracotta hover:underline flex items-center gap-1">
-                                    Visa födelsedagsprogrammet <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Lördag 4 Juli -->
-                        <div class="bg-gradient-to-r from-purple-50 to-white rounded-3xl p-6 border border-purple-100 shadow-sm relative overflow-hidden card-item" id="card-event-kali">
-                            <div class="absolute -right-8 -bottom-8 text-purple-100/40 text-8xl font-bold select-none font-serif">4</div>
-                            <span class="bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Lördag 4 Juli</span>
-                            <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Livekonsert: Lia Kali</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                Upplev en av Spaniens just nu mest omtalade och hyllade artister live! Den unga soul-, hiphop- och reggaeinfluerade artisten Lia Kali uppträder på den magnifika historiska arenan *Plaza de Toros de La Malagueta*. Otrolig chans att uppleva autentisk andalusisk modern musikscen.
-                            </p>
-                            <div class="flex items-center justify-between border-t pt-4 border-purple-100">
-                                <span class="text-xs text-purple-700 font-semibold"><i class="fa-solid fa-music mr-1"></i> Live på La Malagueta</span>
-                                <button onclick="focusOnLocation(36.7203, -4.4116, 'Plaza de Toros (Lia Kali Live)')" class="text-xs font-bold text-purple-700 hover:underline flex items-center gap-1">
-                                    Visa arenan på kartan <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Cirque du Soleil -->
-                        <div class="bg-gradient-to-r from-purple-50 to-white rounded-3xl p-6 border border-purple-100 shadow-sm relative overflow-hidden card-item" id="card-event-cirque">
-                            <span class="bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Hela veckan (28 Jun – 5 Jul)</span>
-                            <h4 class="font-serif text-xl font-bold text-med-dark mb-2">Cirque du Soleil: "KURIOS"</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                Det världsberömda akrobatkompaniet Cirque du Soleil är i stan precis under era resedatum! De sätter upp sin hyllade show "Kurios: Cabinet of Curiosities" – en visuellt spektakulär och hisnande show med vackert steampunk-tema i det stora tältet vid mässområdet Cortijo de Torres.
-                            </p>
-                            <div class="flex items-center justify-between border-t pt-4 border-purple-100">
-                                <span class="text-xs text-gray-500"><i class="fa-solid fa-circle-info mr-1"></i> Mässområdet Cortijo de Torres</span>
-                                <span class="text-xs text-purple-700 font-bold">Show varje kväll</span>
-                            </div>
-                        </div>
-
-                        <!-- Rebajas sommarrea -->
-                        <div class="bg-gradient-to-r from-blue-50 to-white rounded-3xl p-6 border border-blue-100 shadow-sm relative overflow-hidden card-item" id="card-event-rebajas">
-                            <span class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Hela veckan</span>
-                            <h4 class="font-serif text-xl font-bold text-med-dark mb-2">🛍️ REBAJAS – De stora sommarreorna drar igång!</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                Precis i skiftet mellan juni och juli slår alla butiker och köpcentrum upp dörrarna för de berömda spanska reorna – *Rebajas*. Chans att göra enorma designfynd och klassiska spanska sko- och klädinköp till kraftigt reducerade priser längs gatorna i city!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
             <!-- Right Side: Sticky Map Container (5 Cols) -->
@@ -672,7 +816,7 @@
                               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-med-goldBright opacity-75"></span>
                               <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-med-goldBright"></span>
                             </span>
-                            <h3 class="font-serif text-lg font-bold text-med-darkOlive">Interaktiv Karta</h3>
+                            <h3 class="font-serif text-lg font-bold text-med-darkOlive">Interaktiv Resekarta</h3>
                         </div>
                         <button onclick="resetMapView()" class="text-[10px] font-bold text-med-terracotta bg-orange-50 hover:bg-orange-100 px-2.5 py-1.5 rounded-lg transition-all">
                             <i class="fa-solid fa-arrows-spin mr-1"></i> Centrera om
@@ -717,15 +861,22 @@
                     <div class="flex items-start space-x-3.5">
                         <input type="checkbox" class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
                         <div>
-                            <p class="font-bold text-sm sm:text-base">Boka bad & massage på Hammam Al Ándalus till den 1 juli</p>
+                            <p class="font-bold text-sm sm:text-base text-med-goldBright">Boka bad & massage på Hammam Al Ándalus till den 1 juli</p>
                             <p class="text-xs text-gray-300">Ett underbart och stämningsfullt sätt att starta Susanns 50-årsdag på.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3.5">
+                        <input type="checkbox" checked class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
+                        <div>
+                            <p class="font-bold text-sm sm:text-base text-green-400">Bekräfta upphämtningstid för Caminito del Rey (Lör 4 juli)</p>
+                            <p class="text-xs text-gray-300">Bokad och bekräftad! Kontakta leverantören Viator för exakt upphämtningstid på Avenida de Andalucía 10.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-3.5">
                         <input type="checkbox" class="mt-1 w-5 h-5 rounded border-gray-300 text-med-terracotta focus:ring-med-terracotta cursor-pointer accent-med-gold">
                         <div>
-                            <p class="font-bold text-sm sm:text-base">Boka biljetter till Caminito del Rey</p>
-                            <p class="text-xs text-gray-300">Viktigast av allt för er vandringsdag. Blir slutsålt extremt snabbt!</p>
+                            <p class="font-bold text-sm sm:text-base">Boka taxi till hemresan den 6 juli (kl. 04:45)</p>
+                            <p class="text-xs text-gray-300">Boka gärna via Cabify-appen eller be er värd hjälpa er boka en vanlig radio-taxi för att säkerställa att ni är på flygplatsen senast kl. 05:10.</p>
                         </div>
                     </div>
                 </div>
@@ -761,6 +912,26 @@
                 icon: "fa-house-chimney-window",
                 color: "#0f766e",
                 desc: "Ert fantastiska boende i gamla stan. Nära till precis allt!"
+            },
+            // Caminito del Rey Pickup
+            {
+                name: "Upphämtningsplats: Caminito del Rey",
+                lat: 36.7176,
+                lng: -4.4283,
+                category: "itinerary",
+                icon: "fa-bus-simple",
+                color: "#606C38",
+                desc: "Av. de Andalucía 10. Busshållplats mellan Unicaja Banco och Caixa Bank."
+            },
+            // Airport
+            {
+                name: "Málaga Flygplats (AGP)",
+                lat: 36.6749,
+                lng: -4.4991,
+                category: "itinerary",
+                icon: "fa-plane",
+                color: "#1e293b",
+                desc: "Här landar ni söndag 28 juni och åker hem måndag 6 juli."
             },
             // Birthday specific spots
             {
@@ -810,16 +981,7 @@
                 desc: "'La Manquita' - Málagas ståtliga katedral."
             },
             {
-                name: "Romerska Teatern",
-                lat: 36.7211,
-                lng: -4.4173,
-                category: "kultur",
-                icon: "fa-monument",
-                color: "#D47A53",
-                desc: "Vacker romersk teaterruin mitt i stan."
-            },
-            {
-                name: "Caminito del Rey",
+                name: "Caminito del Rey (Vandring)",
                 lat: 36.9157,
                 lng: -4.7695,
                 category: "vandring",
@@ -871,24 +1033,6 @@
                 icon: "fa-fish",
                 color: "#DDA15E",
                 desc: "Ät de berömda strandgrillade sardinspetten här!"
-            },
-            {
-                name: "Auditorio Eduardo Ocón (Symfoni)",
-                lat: 36.7195,
-                lng: -4.4140,
-                category: "event",
-                icon: "fa-music",
-                color: "#7c3aed",
-                desc: "Platsen för symfonikvällen under bar himmel den 28 juni."
-            },
-            {
-                name: "Plaza de Toros (Lia Kali Live)",
-                lat: 36.7203,
-                lng: -4.4116,
-                category: "event",
-                icon: "fa-guitar",
-                color: "#7c3aed",
-                desc: "Här uppträder fantastiska Lia Kali den 4 juli."
             }
         ];
 
@@ -908,6 +1052,9 @@
 
             // Add pins to map
             renderPins();
+            
+            // Set default view to 'itinerary' (Reseplan) on load to showcase the new content
+            filterCategory('itinerary');
         }
 
         // Generate Custom Styled Pins for Leaflet
@@ -954,7 +1101,7 @@
             // Find matching marker and open its popup
             markers.forEach(marker => {
                 const markerLatLng = marker.getLatLng();
-                if (Math.abs(markerLatLng.lat - lat) < 0.0001 && Math.abs(markerLatLng.lng - lng) < 0.0001) {
+                if (Math.abs(markerLatLng.lat - lat) < 0.001 && Math.abs(markerLatLng.lng - lng) < 0.001) {
                     setTimeout(() => {
                         marker.openPopup();
                     }, 1600);
@@ -978,7 +1125,7 @@
             // Toggle active styles on buttons
             const buttons = document.querySelectorAll('.cat-btn');
             buttons.forEach(btn => {
-                btn.classList.remove('bg-med-terracotta', 'text-white', 'shadow-md', 'bg-gradient-to-r', 'from-med-goldBright', 'to-med-terracotta', 'bg-teal-700', 'bg-med-teal');
+                btn.classList.remove('bg-med-terracotta', 'text-white', 'shadow-md', 'bg-gradient-to-r', 'from-med-goldBright', 'to-med-terracotta', 'bg-teal-700', 'bg-med-teal', 'bg-amber-700');
                 btn.classList.add('bg-white', 'text-gray-600', 'border-gray-100');
             });
 
@@ -989,6 +1136,8 @@
                     activeBtn.classList.add('bg-gradient-to-r', 'from-med-goldBright', 'to-med-terracotta', 'text-white', 'shadow-md');
                 } else if (category === 'reseinfo') {
                     activeBtn.classList.add('bg-med-teal', 'text-white', 'shadow-md');
+                } else if (category === 'itinerary') {
+                    activeBtn.classList.add('bg-amber-700', 'text-white', 'shadow-md');
                 } else {
                     activeBtn.classList.add('bg-med-terracotta', 'text-white', 'shadow-md');
                 }
@@ -1018,6 +1167,9 @@
             } else if (category === 'reseinfo') {
                 // Focus tightly on apartment location
                 map.setView([36.7241, -4.4214], 16.5);
+            } else if (category === 'itinerary') {
+                // Zoom out to cover Airport to old town to highlight transit scale
+                map.setView([36.7000, -4.4500], 12);
             } else if (category === 'mat') {
                 // Focus nicely between central and eastern beachfront Pedregalejo
                 map.setView([36.7200, -4.4000], 13);
